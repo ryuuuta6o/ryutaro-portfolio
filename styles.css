@@ -484,15 +484,15 @@ main,
   padding-top: 13px;
   border-top: 1px solid var(--line);
   color: #687985;
-  font-size: 11px;
-  line-height: 1.55;
+  font-size: 16px;
+  line-height: 1.7;
   transition: color 0.35s ease, border-color 0.35s ease;
 }
 
 .signal-story__steps p span {
   display: block;
   margin-bottom: 5px;
-  font: 600 9px/1 var(--display);
+  font: 600 12px/1 var(--display);
   letter-spacing: 0.13em;
 }
 
@@ -568,9 +568,11 @@ main,
 }
 
 .works__header > p:last-child {
-  max-width: 560px;
+  max-width: 700px;
   margin: 24px 0 0;
   color: var(--muted);
+  font-size: clamp(16px, 1.35vw, 19px);
+  line-height: 1.9;
 }
 
 .works__viewport {
@@ -643,7 +645,7 @@ main,
 .work-card__summary {
   margin: 22px 0 0;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .work-card dl {
@@ -736,7 +738,8 @@ main,
   max-width: 650px;
   margin: 28px 0 0;
   color: var(--muted);
-  font-size: 16px;
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 1.95;
 }
 
 .capabilities {
@@ -762,19 +765,20 @@ main,
 
 .capabilities span {
   color: var(--accent);
-  font: 600 9px/1 var(--display);
+  font: 600 11px/1 var(--display);
 }
 
 .capabilities strong {
   display: block;
   margin-top: 22px;
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .capabilities p {
   margin: 7px 0 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 16px;
+  line-height: 1.7;
 }
 
 .contact {
@@ -807,6 +811,8 @@ main,
   max-width: 580px;
   margin: 28px 0 0;
   color: var(--muted);
+  font-size: clamp(17px, 1.35vw, 19px);
+  line-height: 1.9;
 }
 
 .contact footer {
@@ -1086,7 +1092,8 @@ main,
   }
 
   .profile__intro {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.9;
   }
 
   .capabilities {
