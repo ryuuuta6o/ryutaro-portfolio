@@ -203,7 +203,8 @@ if (renderer) {
     targetStage: 0,
     pointerX: 0,
     pointerY: 0,
-    stopped: document.documentElement.classList.contains("motion-off")
+    stopped: document.documentElement.classList.contains("motion-off"),
+    ignite: 0
   };
 
   const stageSettings = [
@@ -221,6 +222,9 @@ if (renderer) {
   });
   window.addEventListener("signal-stage", (event) => {
     state.targetStage = event.detail.stage;
+  });
+  window.addEventListener("core-ignite", () => {
+    state.ignite = 1;
   });
   window.addEventListener("portfolio-motion", (event) => {
     state.stopped = event.detail.stopped;
@@ -265,7 +269,9 @@ if (renderer) {
     core.position.x += (targetX + state.pointerX * 0.12 - core.position.x) * 0.055;
     core.position.y += (targetY - state.pointerY * 0.08 - core.position.y) * 0.055;
     core.position.z += (targetZ - core.position.z) * 0.055;
-    const scale = core.scale.x + (targetScale - core.scale.x) * 0.055;
+    state.ignite *= 0.92;
+    const ignitionScale = targetScale * (1 + state.ignite * 0.18);
+    const scale = core.scale.x + (ignitionScale - core.scale.x) * 0.075;
     core.scale.setScalar(scale);
 
     const explode = Math.sin(Math.min(1, state.progress) * Math.PI) * 1.32;
@@ -283,14 +289,14 @@ if (renderer) {
     inner.rotation.y = -elapsed * 0.32;
     inner.rotation.z = elapsed * 0.18;
     inner.scale.setScalar(1 + Math.sin(elapsed * 1.4) * 0.07 + explode * 0.18);
-    innerMaterial.emissiveIntensity = 1.1 + explode * 1.5;
+    innerMaterial.emissiveIntensity = 1.1 + explode * 1.5 + state.ignite * 4.2;
 
     rings[0].rotation.z = elapsed * 0.18 + state.progress * 2.2;
     rings[1].rotation.y = elapsed * 0.13 - state.progress * 1.8;
     rings[2].rotation.x = Math.PI / 2 + elapsed * 0.1 + state.progress;
     rings.forEach((ring, index) => {
       ring.scale.setScalar(1 + explode * (0.26 + index * 0.08));
-      ring.material.opacity = 0.28 + explode * 0.32;
+      ring.material.opacity = 0.28 + explode * 0.32 + state.ignite * 0.42;
     });
 
     connections.scale.setScalar(1 + explode * 0.24);

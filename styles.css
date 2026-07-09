@@ -139,9 +139,23 @@ a {
   transition: opacity 0.6s ease, filter 0.35s linear;
 }
 
+.interaction-fx {
+  position: fixed;
+  z-index: 130;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
 .no-webgl .signal-core,
 .motion-off .signal-core {
   opacity: 0;
+}
+
+.motion-off .interaction-fx {
+  display: none;
 }
 
 .ambient {
@@ -621,6 +635,10 @@ main,
   transform: scale(1.025);
 }
 
+.work-card.is-fx-active {
+  animation: neuralCardPulse 0.68s var(--ease-out);
+}
+
 .work-card__copy {
   display: flex;
   flex-direction: column;
@@ -680,6 +698,34 @@ main,
   font-size: 13px;
   font-weight: 800;
   text-decoration: none;
+}
+
+.button.is-fx-active,
+.header-cta.is-fx-active,
+.mobile-cta.is-fx-active {
+  animation: dataButtonPulse 0.62s var(--ease-out);
+}
+
+@keyframes dataButtonPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(91, 200, 255, 0);
+  }
+  34% {
+    box-shadow: 0 0 0 1px rgba(183, 237, 255, 0.92), 0 0 34px rgba(91, 200, 255, 0.62);
+  }
+}
+
+@keyframes neuralCardPulse {
+  0%,
+  100% {
+    border-color: var(--line);
+    box-shadow: 0 32px 100px rgba(0, 0, 0, 0.34);
+  }
+  38% {
+    border-color: rgba(124, 255, 197, 0.78);
+    box-shadow: 0 0 0 1px rgba(124, 255, 197, 0.24), 0 0 54px rgba(91, 200, 255, 0.25);
+  }
 }
 
 .profile {
