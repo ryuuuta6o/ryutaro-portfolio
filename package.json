@@ -4,5 +4,8 @@
   "private": true,
   "scripts": {
     "build": "node scripts/build-static.mjs"
+  },
+  "dependencies": {
+    "three": "0.185.1"
   }
 }

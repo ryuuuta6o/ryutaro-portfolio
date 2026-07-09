@@ -9,6 +9,12 @@ await mkdir(dist, { recursive: true });
 
 await Promise.all([
   copyFile(join(root, "index.html"), join(dist, "index.html")),
+  copyFile(join(root, "styles.css"), join(dist, "styles.css")),
+  copyFile(join(root, "main.js"), join(dist, "main.js")),
+  copyFile(join(root, "scene.js"), join(dist, "scene.js")),
+  copyFile(join(root, "favicon.ico"), join(dist, "favicon.ico")),
+  copyFile(join(root, "robots.txt"), join(dist, "robots.txt")),
+  copyFile(join(root, "sitemap.xml"), join(dist, "sitemap.xml")),
   copyFile(
     join(root, "Portfolio-original.html"),
     join(dist, "Portfolio-original.html"),
@@ -16,4 +22,4 @@ await Promise.all([
   cp(join(root, "assets"), join(dist, "assets"), { recursive: true }),
 ]);
 
-console.log("Built responsive portfolio into dist/");
+console.log("Built 3D portfolio into dist/");

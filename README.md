@@ -1,46 +1,58 @@
-# Ryutaro Tachibana Portfolio
+# Ryutaro Tachibana | 3D Portfolio
 
-橘 龍太朗の採用・受注向けポートフォリオです。
+橘 龍太朗の採用・受注向けポートフォリオです。現場で得た一次情報をAIとWebで再現可能な仕組みに変える力を、3Dインタラクションで表現しています。
 
 ## 公開サイト
 
 [https://ryutaro-portfolio-orpin.vercel.app](https://ryutaro-portfolio-orpin.vercel.app)
 
-## 表示仕様
+## コンセプト
 
-- PCでは、従来の10枚構成のスライド型ポートフォリオをそのまま表示します。
-- 768px以下では、スマートフォン専用の縦長レイアウトへ切り替わります。
-- スマホ版は見出しの意図しない改行を防ぎ、写真を元の1:1比率で表示します。
-- スマホでは非表示のPCスライドを読み込まないため、不要な通信と実行を抑えています。
+`FIELD SIGNAL CORE`
+
+中央の3Dコアは、現場の断片的な情報が整理・接続され、実装可能な仕組みに変わる過程を表します。スクロールに連動して分解と再構成が起き、実績、プロフィール、相談導線へ進みます。
+
+## 主な実装
+
+- Three.jsによるリアルタイム3Dコア、ノード、粒子表現
+- GSAP / ScrollTriggerによるスクロール連動演出
+- 実績カードの横方向ストーリーテリング
+- `MOTION ON / OFF`による演出停止
+- モバイル向け描画負荷軽減とスクロールスナップ
+- WebGL非対応時と`prefers-reduced-motion`のフォールバック
+- OGP、構造化データ、sitemap、robots
+- 既存画像をトリミングせず原寸比率で表示
 
 ## 掲載内容
 
-- フィールドサービスとAI業務改善を組み合わせた強み
-- 家電修理・エアコン修理・工事の現場経験
-- クライアント導入済みの案件精算ウェブアプリ
+- クライアント導入済みの案件精算Webアプリ
 - 地域サービス業向けWebサイト
 - 世界経済リスクダッシュボード
-- LINE導線、MEO、AI返信・見積テンプレート
-- GitHub、Wantedly、既存ポートフォリオへの連絡導線
+- 家電修理・工事の現場経験とAI業務改善
 
 ## 技術構成
 
 - HTML / CSS / JavaScript
-- 外部フレームワークなし
-- レスポンシブ切り替え
-- WebP画像
-- Vercel静的デプロイ
+- Three.js
+- GSAP / ScrollTrigger
+- WebP
+- Vercel
 
-## ディレクトリ
+依存ライブラリは`assets/vendor/`に固定しているため、3D部分もCDN障害の影響を受けにくい構成です。
+
+## ファイル構成
 
 ```text
 .
-├── index.html                 # レスポンシブ表示の入口
-├── Portfolio-original.html    # PC用の元スライド
-├── assets/                    # スマホ版で使用するWebP画像
-├── scripts/build-static.mjs   # Vercel用ビルド
-├── package.json
-└── vercel.json
+├── index.html                 # 内容・SEO・セクション構造
+├── styles.css                 # レイアウト・色・レスポンシブ
+├── main.js                    # UI・スクロール演出
+├── scene.js                   # Three.js 3Dシーン
+├── Portfolio-original.html    # 変更前のポートフォリオ
+├── assets/                    # 写真・OGP・ローカルライブラリ
+├── 01_docs/project-notes.md   # 制作意図と更新メモ
+├── 05_feedback/feedback-log.md
+└── scripts/build-static.mjs   # Vercel用ビルド
 ```
 
 ## ローカル確認
@@ -50,4 +62,4 @@ npm run build
 npx serve dist
 ```
 
-`index.html` を直接開いても確認できます。
+元デザインは`Portfolio-original.html`からいつでも確認できます。
