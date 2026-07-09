@@ -98,18 +98,11 @@
           <a class="button button--ghost magnetic" href="https://www.wantedly.com/id/ryuuuta6o" target="_blank" rel="noreferrer">採用・協業の相談</a>
         </div>
       </div>
-
-      <div class="hero__telemetry" aria-label="プロフィール概要">
-        <div><span>BASE</span><strong>NAGOYA</strong></div>
-        <div><span>ROLE</span><strong>SOLUTION ENGINEER</strong></div>
-        <div><span>STATUS</span><strong>AVAILABLE</strong></div>
-      </div>
     </section>
 
     <section class="signal-story" id="signal">
       <div class="signal-story__sticky">
         <div class="signal-story__copy">
-          <p class="section-index">SIGNAL PROCESS</p>
           <p class="signal-story__statement" data-illuminate>
             現場で起きていることを観察する。<br>
             判断の流れを構造へ変える。<br>
@@ -120,11 +113,6 @@
             <p data-step="1"><span>STRUCTURE</span>業務フローの設計</p>
             <p data-step="2"><span>SHIP</span>WebとAIで実装</p>
           </div>
-        </div>
-        <div class="core-labels" aria-hidden="true">
-          <span class="core-label core-label--a">FIELD INPUT</span>
-          <span class="core-label core-label--b">AI LAYER</span>
-          <span class="core-label core-label--c">REPEATABLE SYSTEM</span>
         </div>
       </div>
     </section>
@@ -147,9 +135,11 @@
               <h3>案件精算ウェブアプリ</h3>
               <p class="work-card__summary">未精算額・集金者・支払い方向を一画面に統合。エアコンクリーニング会社の実業務へ導入しました。</p>
               <dl>
-                <div><dt>ROLE</dt><dd>要件整理 / UI / 実装 / 導入</dd></div>
-                <div><dt>IMPACT</dt><dd>分散していた精算判断を一画面へ</dd></div>
+                <div><dt>課題</dt><dd>精算判断に必要な情報が担当者と画面に分散</dd></div>
+                <div><dt>実装</dt><dd>要件整理、UI設計、開発、現場導入</dd></div>
+                <div><dt>成果</dt><dd>未精算額・集金・支払い方向を一画面へ統合</dd></div>
               </dl>
+              <button class="work-card__zoom" type="button" data-lightbox-src="assets/settlement-app.webp" data-lightbox-alt="案件精算ウェブアプリの管理画面" data-lightbox-caption="案件精算ウェブアプリ / 管理画面">画面を拡大</button>
             </div>
           </article>
 
@@ -161,7 +151,15 @@
               <p>WEB / CUSTOMER FLOW</p>
               <h3>地域サービス業サイト</h3>
               <p class="work-card__summary">スマホでの見やすさと、写真送付から相談までの導線を設計。現場サービスを依頼につなげるサイトです。</p>
-              <a class="work-link" href="https://ouchi-nandemoya.com/" target="_blank" rel="noreferrer">公開サイトを見る ↗</a>
+              <dl>
+                <div><dt>課題</dt><dd>専門サービスの価値と相談方法が伝わりにくい</dd></div>
+                <div><dt>実装</dt><dd>情報設計、Web制作、LINE相談導線</dd></div>
+                <div><dt>成果</dt><dd>サービス理解から相談までを一続きに整理</dd></div>
+              </dl>
+              <div class="work-card__actions">
+                <button class="work-card__zoom" type="button" data-lightbox-src="assets/local-service-site.webp" data-lightbox-alt="おうちのなんでも屋のWebサイト画面" data-lightbox-caption="地域サービス業サイト / トップページ">画面を拡大</button>
+                <a class="work-link" href="https://ouchi-nandemoya.com/" target="_blank" rel="noreferrer">公開サイトを見る ↗</a>
+              </div>
             </div>
           </article>
 
@@ -173,7 +171,15 @@
               <p>DATA / VISUALIZATION</p>
               <h3>世界経済リスクダッシュボード</h3>
               <p class="work-card__summary">複数の経済指標と地域リスクを集約。状況を短時間で判断できる情報設計と可視化を行いました。</p>
-              <a class="work-link" href="https://macro-crisis-dashboard.vercel.app/" target="_blank" rel="noreferrer">公開サイトを見る ↗</a>
+              <dl>
+                <div><dt>課題</dt><dd>複数の経済指標を横断して把握しづらい</dd></div>
+                <div><dt>実装</dt><dd>データ収集、可視化、更新設計</dd></div>
+                <div><dt>成果</dt><dd>市場リスクの変化を一覧で比較可能に</dd></div>
+              </dl>
+              <div class="work-card__actions">
+                <button class="work-card__zoom" type="button" data-lightbox-src="assets/macro-dashboard.webp" data-lightbox-alt="世界経済リスクダッシュボードの画面" data-lightbox-caption="世界経済リスクダッシュボード / 全体画面">画面を拡大</button>
+                <a class="work-link" href="https://macro-crisis-dashboard.vercel.app/" target="_blank" rel="noreferrer">公開サイトを見る ↗</a>
+              </div>
             </div>
           </article>
         </div>
@@ -182,29 +188,31 @@
 
     <section class="profile" id="profile">
       <figure class="profile__portrait">
-        <img src="assets/portrait.webp" width="1254" height="1254" alt="スーツ姿の橘龍太朗" fetchpriority="high">
-        <div class="profile__scan" aria-hidden="true"></div>
-        <figcaption>RYUTARO TACHIBANA / NAGOYA</figcaption>
+        <div class="profile__image">
+          <img src="assets/portrait.webp" width="1254" height="1254" alt="スーツ姿の橘龍太朗" fetchpriority="high">
+          <div class="profile__scan" aria-hidden="true"></div>
+        </div>
+        <figcaption>
+          <strong>橘 龍太朗</strong>
+          <span>現場経験を、AIとWebの実装へつなぐ。</span>
+        </figcaption>
       </figure>
       <div class="profile__copy">
-        <p class="section-index">FIELD PROFILE</p>
         <h2 data-reveal>現場の言葉を、<br>開発へ翻訳する。</h2>
         <p class="profile__intro" data-reveal>
           家電・エアコンの修理と工事で、ヒアリング、原因分析、見積提案、施工、日程調整までを担当してきました。
           技術を入れることではなく、現場で使われ続ける状態をゴールにしています。
         </p>
-        <div class="capabilities" data-reveal>
-          <div><span>01</span><strong>現場理解</strong><p>修理・施工・顧客対応</p></div>
-          <div><span>02</span><strong>業務設計</strong><p>判断と情報の流れを構造化</p></div>
-          <div><span>03</span><strong>実装</strong><p>Web・AI・LINE・MEO</p></div>
-          <div><span>04</span><strong>改善</strong><p>導入後の運用と検証</p></div>
-        </div>
+        <ol class="profile__journey" data-reveal>
+          <li><strong>現場を観察</strong><p>修理・施工・顧客対応から、実際の詰まりを見つける。</p></li>
+          <li><strong>判断を整理</strong><p>人に依存している情報と業務の流れを構造へ変える。</p></li>
+          <li><strong>使える形へ実装</strong><p>Web・AI・LINE・MEOを、導入後の運用まで見据えて組み立てる。</p></li>
+        </ol>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="contact__orb" aria-hidden="true"></div>
-      <p class="section-index">OPEN CHANNEL</p>
       <h2>
         <span class="title-line">現場の「困った」を、</span>
         <span class="title-line">次の仕組みへ。</span>
@@ -220,6 +228,14 @@
       </footer>
     </section>
   </main>
+
+  <dialog class="lightbox" aria-label="実績画像の拡大表示">
+    <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる">閉じる</button>
+    <figure>
+      <img src="assets/settlement-app.webp" width="1309" height="1245" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </dialog>
 
   <a class="mobile-cta" href="https://www.wantedly.com/id/ryuuuta6o" target="_blank" rel="noreferrer">採用・協業について連絡</a>
 

@@ -219,6 +219,25 @@
     window.dispatchEvent(new CustomEvent("signal-stage", { detail: { stage } }));
   }
 
+  const lightbox = document.querySelector(".lightbox");
+  const lightboxImage = lightbox.querySelector("img");
+  const lightboxCaption = lightbox.querySelector("figcaption");
+  const lightboxClose = lightbox.querySelector(".lightbox__close");
+
+  document.querySelectorAll(".work-card__zoom").forEach((button) => {
+    button.addEventListener("click", () => {
+      lightboxImage.src = button.dataset.lightboxSrc;
+      lightboxImage.alt = button.dataset.lightboxAlt;
+      lightboxCaption.textContent = button.dataset.lightboxCaption;
+      lightbox.showModal();
+    });
+  });
+
+  lightboxClose.addEventListener("click", () => lightbox.close());
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+
   const interactionCanvas = document.querySelector("#interaction-fx");
   const interactionContext = interactionCanvas.getContext("2d");
   const interactionEffects = [];
@@ -392,6 +411,7 @@
   document.addEventListener("click", (event) => {
     if (document.documentElement.classList.contains("motion-off")) return;
     if (event.target.closest(".motion-toggle")) return;
+    if (event.target.closest(".lightbox")) return;
     const point = clickPoint(event);
     const cta = event.target.closest(".button, .header-cta, .mobile-cta");
     const card = event.target.closest(".work-card");

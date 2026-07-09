@@ -17,10 +17,11 @@
 - Three.jsによるリアルタイム3Dコア、ノード、粒子表現
 - GSAP / ScrollTriggerによるスクロール連動演出
 - 実績カードの横方向ストーリーテリング
+- 実績ごとの「課題・実装・成果」と画像拡大ダイアログ
 - `MOTION ON / OFF`による演出停止
 - モバイル向け描画負荷軽減とスクロールスナップ
 - WebGL非対応時と`prefers-reduced-motion`のフォールバック
-- OGP、構造化データ、sitemap、robots
+- 専用OGP、構造化データ、sitemap、robots
 - 既存画像をトリミングせず原寸比率で表示
 
 ## 掲載内容
@@ -50,9 +51,11 @@
 ├── scene.js                   # Three.js 3Dシーン
 ├── Portfolio-original.html    # 変更前のポートフォリオ
 ├── assets/                    # 写真・OGP・ローカルライブラリ
+├── 01_docs/MASTER.md          # デザインシステム
 ├── 01_docs/project-notes.md   # 制作意図と更新メモ
 ├── 05_feedback/feedback-log.md
-└── scripts/build-static.mjs   # Vercel用ビルド
+├── scripts/build-static.mjs   # Vercel用ビルド
+└── scripts/generate-ogp.py    # OGP生成
 ```
 
 ## ローカル確認
