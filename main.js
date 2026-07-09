@@ -155,12 +155,13 @@
       scrub: true,
       onUpdate: (self) => {
         if (document.documentElement.classList.contains("motion-off")) return;
-        illuminate(self.progress);
-        const step = Math.min(2, Math.floor(self.progress * 3));
+        const readingProgress = Math.min(1, Math.max(0, (self.progress - 0.02) / 0.64));
+        illuminate(readingProgress);
+        const step = Math.min(2, Math.floor(readingProgress * 3));
         document.querySelectorAll(".signal-story__steps p").forEach((item, index) => {
           item.classList.toggle("is-active", index === step);
         });
-        window.dispatchEvent(new CustomEvent("signal-progress", { detail: { progress: self.progress } }));
+        window.dispatchEvent(new CustomEvent("signal-progress", { detail: { progress: readingProgress } }));
       },
       onEnter: () => dispatchStage(1),
       onEnterBack: () => dispatchStage(1),

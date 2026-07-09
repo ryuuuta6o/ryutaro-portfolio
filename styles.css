@@ -33,7 +33,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x: hidden;
+  overflow-x: clip;
   background: var(--bg);
   color: var(--text);
   font-family: var(--body);
@@ -574,14 +574,18 @@ main,
 }
 
 .works__viewport {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  padding: calc(var(--header-h) + 24px) 0 32px;
 }
 
 .works__track {
   display: flex;
   gap: 28px;
   width: max-content;
-  padding: 0 max(26px, calc((100vw - var(--container)) / 2)) 80px;
+  padding: 0 max(26px, calc((100vw - var(--container)) / 2));
 }
 
 .work-card {
@@ -689,6 +693,7 @@ main,
 
 .profile__portrait {
   position: relative;
+  margin: 0;
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 4px;
@@ -699,6 +704,19 @@ main,
   height: auto;
   aspect-ratio: 1;
   object-fit: contain;
+}
+
+.profile__portrait figcaption {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  padding: 7px 10px;
+  border: 1px solid rgba(91, 200, 255, 0.34);
+  background: rgba(3, 8, 12, 0.78);
+  color: var(--accent-2);
+  font: 600 9px/1 var(--display);
+  letter-spacing: 0.14em;
+  backdrop-filter: blur(8px);
 }
 
 .profile__scan {
@@ -932,7 +950,10 @@ main,
   }
 
   .works__viewport {
+    min-height: 0;
+    display: block;
     overflow-x: auto;
+    padding: 0;
     overscroll-behavior-inline: contain;
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
