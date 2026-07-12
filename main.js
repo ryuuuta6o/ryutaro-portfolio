@@ -7,6 +7,11 @@
   const loaderCount = document.querySelector(".loader__count");
   const loaderBar = document.querySelector(".loader__track span");
   const motionToggle = document.querySelector(".motion-toggle");
+  const hero = document.querySelector(".hero");
+  const signalRail = document.querySelector(".signal-rail");
+  const signalRailBar = document.querySelector(".signal-rail__track span");
+  const signalRailValue = document.querySelector(".signal-rail__value");
+  const signalRailLabel = document.querySelector(".signal-rail__label");
   const mediaReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let progress = 0;
   let loaderFinished = false;
@@ -74,16 +79,29 @@
     if (!gsap || document.documentElement.classList.contains("motion-off")) return;
     gsap.fromTo(
       [".kicker", ".hero .title-line", ".hero__lead", ".hero__actions", ".hero__telemetry"],
-      { y: 34, opacity: 0 },
+      { y: 18, opacity: 0 },
       {
         y: 0,
         opacity: 1,
-        duration: 1,
-        stagger: 0.1,
+        duration: 0.68,
+        stagger: 0.075,
         ease: "expo.out",
         clearProps: "transform,opacity"
       }
     );
+  }
+
+  if (hero && window.matchMedia("(hover:hover) and (pointer:fine)").matches) {
+    hero.addEventListener("pointermove", (event) => {
+      if (document.documentElement.classList.contains("motion-off")) return;
+      const rect = hero.getBoundingClientRect();
+      hero.style.setProperty("--spot-x", `${event.clientX - rect.left}px`);
+      hero.style.setProperty("--spot-y", `${event.clientY - rect.top}px`);
+    }, { passive: true });
+    hero.addEventListener("pointerleave", () => {
+      hero.style.removeProperty("--spot-x");
+      hero.style.removeProperty("--spot-y");
+    });
   }
 
   document.querySelectorAll("[data-reveal]").forEach((element) => {
@@ -130,8 +148,7 @@
     characters.forEach((character, index) => {
       const active = index < count;
       character.style.opacity = active ? "1" : "0.28";
-      character.style.color = active ? "var(--text)" : "rgba(243,246,247,.28)";
-      character.style.textShadow = active && index >= count - 3 ? "0 0 24px rgba(91,200,255,.78)" : "none";
+      character.classList.toggle("is-leading", active && index >= count - 3);
     });
   }
 
@@ -146,6 +163,17 @@
       end: "bottom top",
       onEnter: () => document.querySelector(".site-header").classList.add("is-scrolled"),
       onLeaveBack: () => document.querySelector(".site-header").classList.remove("is-scrolled")
+    });
+
+    ScrollTrigger.create({
+      trigger: "main",
+      start: "top top",
+      end: "bottom bottom",
+      onUpdate: (self) => {
+        const percent = Math.round(self.progress * 100);
+        signalRailBar.style.transform = `scaleY(${self.progress})`;
+        signalRailValue.value = String(percent).padStart(2, "0");
+      }
     });
 
     ScrollTrigger.create({
@@ -216,8 +244,25 @@
   }
 
   function dispatchStage(stage) {
+    const labels = ["FIELD / TOP", "FIELD / SIGNAL", "FIELD / WORKS", "FIELD / PROFILE", "FIELD / CONTACT"];
+    signalRailLabel.textContent = labels[stage] || labels[0];
+    document.querySelectorAll(".nav a").forEach((link) => {
+      const target = link.getAttribute("href");
+      const activeTarget = ["#top", "#signal", "#works", "#profile", "#contact"][stage];
+      link.classList.toggle("is-active", target === activeTarget);
+    });
     window.dispatchEvent(new CustomEvent("signal-stage", { detail: { stage } }));
   }
+
+  const profileObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-active");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.24 });
+  const profile = document.querySelector(".profile");
+  if (profile) profileObserver.observe(profile);
 
   const lightbox = document.querySelector(".lightbox");
   const lightboxImage = lightbox.querySelector("img");
@@ -464,6 +509,21 @@
   });
 
   if (window.matchMedia("(hover:hover) and (pointer:fine)").matches && gsap) {
+    document.querySelectorAll("[data-tilt]").forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        if (document.documentElement.classList.contains("motion-off")) return;
+        const rect = card.getBoundingClientRect();
+        const x = (event.clientX - rect.left) / rect.width - 0.5;
+        const y = (event.clientY - rect.top) / rect.height - 0.5;
+        card.style.setProperty("--tilt-x", `${(-y * 2.4).toFixed(2)}deg`);
+        card.style.setProperty("--tilt-y", `${(x * 3.2).toFixed(2)}deg`);
+      }, { passive: true });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
+      });
+    });
+
     document.querySelectorAll(".magnetic").forEach((button) => {
       button.addEventListener("pointermove", (event) => {
         if (document.documentElement.classList.contains("motion-off")) return;
@@ -473,7 +533,7 @@
         gsap.to(button, { x, y, duration: 0.35, ease: "power2.out" });
       });
       button.addEventListener("pointerleave", () => {
-        gsap.to(button, { x: 0, y: 0, duration: 0.8, ease: "elastic.out(1,0.4)" });
+        gsap.to(button, { x: 0, y: 0, duration: 0.42, ease: "expo.out" });
       });
     });
   }

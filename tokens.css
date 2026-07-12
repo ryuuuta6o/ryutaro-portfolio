@@ -1,0 +1,127 @@
+/* Hallmark · pre-emit critique: P5 H4 E5 S5 R4 V5
+ * macrostructure: Narrative Workflow · genre: atmospheric · theme: Aurora
+ * enrichment: H9 / Tier-D interactive Three.js · polish: HP3 hero spotlight
+ * nav: N5 Floating pill · footer: Ft5 Statement
+ * motion: signal spotlight · holographic tilt · scroll-synced navigation
+ * contrast: pass (40–41) · mobile: pass (34, 49, 50–57) · slop: 58 / 58
+ */
+
+:root {
+  color-scheme: dark;
+
+  --color-paper: oklch(12% 0.014 230);
+  --color-paper-deep: oklch(9% 0.012 230);
+  --color-paper-2: oklch(15% 0.018 230);
+  --color-paper-3: oklch(19% 0.022 230);
+  --color-ink: oklch(96% 0.008 220);
+  --color-ink-2: oklch(90% 0.012 220);
+  --color-muted: oklch(74% 0.018 225);
+  --color-muted-low: oklch(58% 0.022 225);
+  --color-rule: oklch(78% 0.045 220 / 0.18);
+  --color-rule-strong: oklch(82% 0.075 220 / 0.34);
+  --color-accent: oklch(78% 0.145 225);
+  --color-accent-soft: oklch(89% 0.085 220);
+  --color-signal: oklch(88% 0.145 160);
+  --color-danger: oklch(72% 0.17 28);
+  --color-focus: oklch(84% 0.15 220);
+  --color-on-accent: oklch(16% 0.026 230);
+  --color-accent-ink: var(--color-on-accent);
+  --color-overlay: oklch(9% 0.012 230 / 0.82);
+  --color-surface-alpha: oklch(16% 0.02 230 / 0.9);
+  --color-ink-faint: oklch(96% 0.008 220 / 0.12);
+  --color-ink-ghost: oklch(96% 0.008 220 / 0.28);
+  --color-accent-faint: oklch(78% 0.145 225 / 0.12);
+  --color-accent-ghost: oklch(78% 0.145 225 / 0.25);
+  --color-signal-ghost: oklch(88% 0.145 160 / 0.24);
+  --shadow-card: 0 32px 100px oklch(4% 0.012 230 / 0.34);
+  --shadow-modal: 0 30px 120px oklch(4% 0.012 230 / 0.72);
+  --shadow-mobile: 0 18px 50px oklch(4% 0.012 230 / 0.48);
+
+  --cyan-50: oklch(98% 0.015 220);
+  --cyan-100: oklch(95% 0.03 220);
+  --cyan-200: var(--color-accent-soft);
+  --cyan-300: oklch(85% 0.11 220);
+  --cyan-400: var(--color-accent);
+  --cyan-500: oklch(70% 0.16 225);
+  --cyan-600: oklch(61% 0.15 230);
+  --cyan-700: oklch(52% 0.13 230);
+  --cyan-800: oklch(44% 0.11 230);
+  --cyan-900: oklch(36% 0.09 230);
+  --cyan-950: oklch(24% 0.06 230);
+  --neutral-50: var(--color-ink);
+  --neutral-100: var(--color-ink-2);
+  --neutral-200: oklch(84% 0.014 225);
+  --neutral-300: var(--color-muted);
+  --neutral-400: oklch(64% 0.02 225);
+  --neutral-500: var(--color-muted-low);
+  --neutral-600: oklch(48% 0.02 225);
+  --neutral-700: oklch(38% 0.02 225);
+  --neutral-800: oklch(26% 0.02 230);
+  --neutral-900: var(--color-paper-2);
+  --neutral-950: var(--color-paper);
+
+  --bg: var(--color-paper);
+  --bg-soft: var(--color-paper-2);
+  --surface: var(--color-surface-alpha);
+  --text: var(--color-ink);
+  --muted: var(--color-muted);
+  --line: var(--color-rule);
+  --accent: var(--color-accent);
+  --accent-2: var(--color-accent-soft);
+  --signal: var(--color-signal);
+  --danger: var(--color-danger);
+
+  --font-display: "Chakra Petch", "Noto Sans JP", sans-serif;
+  --font-body: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --display: var(--font-display);
+  --body: var(--font-body);
+
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --space-5xl: 12rem;
+
+  --text-xs: 0.6875rem;
+  --text-sm: 0.8125rem;
+  --text-base: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.5625rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-3xl: 3.052rem;
+  --text-4xl: 3.815rem;
+  --text-display: clamp(3.25rem, 6.4vw, 5.5rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-inout: var(--ease-in-out);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --rule-hair: 1px;
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-pill: 999px;
+  --z-background: 0;
+  --z-base: 1;
+  --z-grain: 4;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-sticky-nav: 220;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+  --banner-height: 68px;
+  --header-h: 68px;
+  --container: 1240px;
+}

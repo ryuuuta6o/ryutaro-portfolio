@@ -10,6 +10,7 @@ await mkdir(dist, { recursive: true });
 await Promise.all([
   copyFile(join(root, "index.html"), join(dist, "index.html")),
   copyFile(join(root, "styles.css"), join(dist, "styles.css")),
+  copyFile(join(root, "tokens.css"), join(dist, "tokens.css")),
   copyFile(join(root, "main.js"), join(dist, "main.js")),
   copyFile(join(root, "scene.js"), join(dist, "scene.js")),
   copyFile(join(root, "favicon.ico"), join(dist, "favicon.ico")),

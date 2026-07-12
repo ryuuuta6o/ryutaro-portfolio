@@ -1,0 +1,9 @@
+{
+  "scanned_at": "2026-07-12",
+  "framework": "vanilla-html",
+  "font_stack": ["Chakra Petch", "Noto Sans JP"],
+  "palette": "dark cyan semantic CSS tokens",
+  "motion": ["GSAP", "ScrollTrigger", "Three.js"],
+  "spacing": "8px legacy system extended with Hallmark 4px semantic scale",
+  "preserve": ["content", "routes", "portrait", "three project screenshots", "FIELD SIGNAL CORE"]
+}

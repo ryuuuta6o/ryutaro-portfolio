@@ -17,3 +17,4 @@
 
 - 2026-07-09: 3Dアニメーション版へ全面改修。元デザインは`Portfolio-original.html`に保存。
 - 2026-07-09: UIスキルを使った採用・受注向けの改善版をローカルテスト環境へ実装。デザイントークン、実績構造、画像拡大、プロフィール、専用OGPを更新。
+- 2026-07-12: Hallmark referencesを使い、Auroraテーマの演出強化版をローカルへ実装。N5 Floating pill、HP3 spotlight、SIGNAL RAIL、カード傾斜、OKLCHトークンを追加。

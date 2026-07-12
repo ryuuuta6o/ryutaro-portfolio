@@ -63,6 +63,12 @@
   <div class="ambient" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
 
+  <aside class="signal-rail" aria-hidden="true">
+    <span class="signal-rail__label">FIELD / TOP</span>
+    <span class="signal-rail__track"><span></span></span>
+    <output class="signal-rail__value">00</output>
+  </aside>
+
   <header class="site-header">
     <a class="brand" href="#top" aria-label="ページ上部へ">
       <span class="brand__mark">橘</span>
@@ -83,6 +89,7 @@
 
   <main id="main">
     <section class="hero" id="top">
+      <div class="hero__spotlight" aria-hidden="true"></div>
       <div class="hero__copy">
         <p class="kicker">FIELD SERVICE × AI ENGINEERING</p>
         <h1>
@@ -97,6 +104,7 @@
           <a class="button button--primary magnetic" href="#works">実績を見る</a>
           <a class="button button--ghost magnetic" href="https://www.wantedly.com/id/ryuuuta6o" target="_blank" rel="noreferrer">採用・協業の相談</a>
         </div>
+        <p class="hero__interaction-hint" aria-hidden="true">MOVE POINTER / CORE REACTS</p>
       </div>
     </section>
 
@@ -109,9 +117,9 @@
             使われ続ける形まで実装する。
           </p>
           <div class="signal-story__steps" aria-live="polite">
-            <p class="is-active" data-step="0"><span>OBSERVE</span>現場の一次情報</p>
-            <p data-step="1"><span>STRUCTURE</span>業務フローの設計</p>
-            <p data-step="2"><span>SHIP</span>WebとAIで実装</p>
+            <p class="is-active" data-step="0"><span>1.0 / OBSERVE</span>現場の一次情報</p>
+            <p data-step="1"><span>2.0 / STRUCTURE</span>業務フローの設計</p>
+            <p data-step="2"><span>3.0 / SHIP</span>WebとAIで実装</p>
           </div>
         </div>
       </div>
@@ -126,7 +134,7 @@
 
       <div class="works__viewport">
         <div class="works__track">
-          <article class="work-card work-card--settlement">
+          <article class="work-card work-card--settlement" data-tilt>
             <div class="work-card__visual">
               <img src="assets/settlement-app.webp" width="1309" height="1245" alt="案件精算ウェブアプリの管理画面" loading="lazy" decoding="async">
             </div>
@@ -143,7 +151,7 @@
             </div>
           </article>
 
-          <article class="work-card work-card--service">
+          <article class="work-card work-card--service" data-tilt>
             <div class="work-card__visual">
               <img src="assets/local-service-site.webp" width="1708" height="1280" alt="おうちのなんでも屋のWebサイト画面" loading="lazy" decoding="async">
             </div>
@@ -163,7 +171,7 @@
             </div>
           </article>
 
-          <article class="work-card work-card--dashboard">
+          <article class="work-card work-card--dashboard" data-tilt>
             <div class="work-card__visual">
               <img src="assets/macro-dashboard.webp" width="1433" height="1125" alt="世界経済リスクダッシュボードの画面" loading="lazy" decoding="async">
             </div>

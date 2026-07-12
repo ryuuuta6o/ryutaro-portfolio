@@ -16,6 +16,8 @@
 
 - Three.jsによるリアルタイム3Dコア、ノード、粒子表現
 - GSAP / ScrollTriggerによるスクロール連動演出
+- ヒーロー限定のシグナルスポットライトと実績カードの3D傾斜
+- 浮遊ナビゲーションとスクロール進行を示すSIGNAL RAIL
 - 実績カードの横方向ストーリーテリング
 - 実績ごとの「課題・実装・成果」と画像拡大ダイアログ
 - `MOTION ON / OFF`による演出停止
@@ -47,6 +49,7 @@
 .
 ├── index.html                 # 内容・SEO・セクション構造
 ├── styles.css                 # レイアウト・色・レスポンシブ
+├── tokens.css                 # Hallmark準拠のデザイントークン
 ├── main.js                    # UI・スクロール演出
 ├── scene.js                   # Three.js 3Dシーン
 ├── Portfolio-original.html    # 変更前のポートフォリオ

@@ -64,6 +64,19 @@ Body text and backgrounds must maintain WCAG AA contrast. Cyan is reserved for a
 - Click effects provide immediate interaction feedback.
 - MOTION OFF disables non-essential motion and leaves all content visible.
 - Motion must not delay navigation or hide text.
+- Hero spotlight is scoped to the hero and follows pointer position only on fine pointers.
+- Work-card tilt is subtle, uses transform only, and resets immediately when the pointer leaves.
+- SIGNAL RAIL communicates reading position and the active section without blocking content.
+
+## Hallmark Direction
+
+- Genre: atmospheric
+- Macrostructure: Narrative Workflow
+- Theme: Aurora
+- Hero: H9 Custom Illustration Centerpiece using the existing interactive Three.js core
+- Navigation: N5 Floating pill
+- Footer: Ft5 Statement
+- Motion primitives: signal spotlight, holographic tilt, scroll-synced navigation
 
 ## Accessibility
 
