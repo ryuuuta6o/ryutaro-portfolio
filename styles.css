@@ -685,9 +685,11 @@ main,
   --tilt-x: 0deg;
   --tilt-y: 0deg;
   width: min(78vw, 1080px);
-  min-height: 620px;
+  height: clamp(650px, 68svh, 700px);
+  min-height: 650px;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  grid-template-rows: minmax(0, 1fr);
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -705,6 +707,7 @@ main,
 
 .work-card__visual {
   min-width: 0;
+  min-height: 0;
   overflow: hidden;
   background: var(--color-paper-2);
 }
@@ -723,11 +726,6 @@ main,
   object-position: center;
 }
 
-.work-card--lp-tall .work-card__visual img {
-  object-fit: cover;
-  object-position: top center;
-}
-
 .work-card.is-fx-active {
   animation: neuralCardPulse 0.68s var(--ease-out);
 }
@@ -736,11 +734,12 @@ main,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(var(--space-xl), 4vw, var(--space-2xl));
+  min-height: 0;
+  padding: clamp(32px, 3vw, 40px);
 }
 
 .work-card__copy > p:first-child {
-  margin: 0 0 var(--space-md);
+  margin: 0 0 14px;
   color: var(--accent);
   font: 600 11px/1 var(--display);
   letter-spacing: 0.15em;
@@ -754,20 +753,20 @@ main,
 }
 
 .work-card__summary {
-  margin: var(--space-lg) 0 0;
+  margin: 16px 0 0;
   color: var(--muted);
   font-size: 16px;
 }
 
 .work-card dl {
-  margin: calc(var(--space-lg) + var(--space-2xs)) 0 0;
+  margin: 18px 0 0;
 }
 
 .work-card dl div {
   display: grid;
   grid-template-columns: 54px 1fr;
   gap: var(--space-sm);
-  padding: var(--space-sm) 0;
+  padding: 8px 0;
   border-top: 1px solid var(--line);
 }
 
@@ -790,7 +789,7 @@ main,
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-lg);
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .work-link,
@@ -818,7 +817,7 @@ main,
 }
 
 .work-card__copy > .work-card__zoom {
-  margin-top: 28px;
+  margin-top: 22px;
 }
 
 .work-link:hover,
@@ -1086,10 +1085,31 @@ main,
   gap: var(--space-sm);
 }
 
-.lightbox img {
+.lightbox__media {
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.lightbox__media img {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.lightbox.is-long .lightbox__media {
+  align-items: start;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.lightbox.is-long .lightbox__media img {
+  width: min(100%, 864px);
+  height: auto;
+  max-height: none;
+  margin: 0 auto;
 }
 
 .lightbox figcaption {
@@ -1149,6 +1169,10 @@ button:disabled,
   .contact {
     margin-left: 28px;
     margin-right: 28px;
+  }
+
+  .work-card {
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
   }
 }
 
@@ -1232,6 +1256,7 @@ button:disabled,
 
   .work-card {
     width: 100%;
+    height: auto;
     min-height: 0;
     grid-template-columns: minmax(0, 1fr);
     transform: none;

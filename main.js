@@ -266,6 +266,7 @@
 
   const lightbox = document.querySelector(".lightbox");
   const lightboxImage = lightbox.querySelector("img");
+  const lightboxMedia = lightbox.querySelector(".lightbox__media");
   const lightboxCaption = lightbox.querySelector("figcaption");
   const lightboxClose = lightbox.querySelector(".lightbox__close");
 
@@ -274,6 +275,8 @@
       lightboxImage.src = button.dataset.lightboxSrc;
       lightboxImage.alt = button.dataset.lightboxAlt;
       lightboxCaption.textContent = button.dataset.lightboxCaption;
+      lightbox.classList.toggle("is-long", button.dataset.lightboxMode === "long");
+      lightboxMedia.scrollTop = 0;
       lightbox.showModal();
     });
   });
