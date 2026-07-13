@@ -709,11 +709,23 @@ main,
   background: var(--color-paper-2);
 }
 
+.work-card__visual--duo {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+
 .work-card__visual img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: center;
+}
+
+.work-card--lp-tall .work-card__visual img {
+  object-fit: cover;
+  object-position: top center;
 }
 
 .work-card.is-fx-active {
@@ -1203,29 +1215,39 @@ button:disabled,
   .works__viewport {
     min-height: 0;
     display: block;
-    overflow-x: auto;
-    padding: 0;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    overflow: visible;
+    padding: 0 calc(var(--space-md) + var(--space-2xs));
   }
 
   .works__track {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-md);
-    width: max-content;
-    padding: 0 calc(var(--space-md) + var(--space-2xs)) calc(var(--space-xl) + var(--space-2xs));
+    width: auto;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 0 calc(var(--space-xl) + var(--space-2xs));
+    perspective: none;
   }
 
   .work-card {
-    width: calc(100vw - 40px);
+    width: 100%;
     min-height: 0;
     grid-template-columns: minmax(0, 1fr);
-    scroll-snap-align: center;
     transform: none;
   }
 
   .work-card__visual {
     aspect-ratio: 4 / 3;
+  }
+
+  .work-card__visual--duo {
+    aspect-ratio: auto;
+    grid-template-rows: auto auto;
+  }
+
+  .work-card__visual--duo img {
+    height: auto;
   }
 
   .work-card__copy {
