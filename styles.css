@@ -893,7 +893,7 @@ main,
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  object-position: 52% center;
+  object-position: center;
 }
 
 .profile__portrait figcaption {
