@@ -244,7 +244,7 @@
   }
 
   function dispatchStage(stage) {
-    const labels = ["FIELD / TOP", "FIELD / SIGNAL", "FIELD / WORKS", "FIELD / PROFILE", "FIELD / CONTACT"];
+    const labels = ["OPS / TOP", "OPS / APPROACH", "OPS / WORKS", "OPS / PROFILE", "OPS / CONTACT"];
     signalRailLabel.textContent = labels[stage] || labels[0];
     document.querySelectorAll(".nav a").forEach((link) => {
       const target = link.getAttribute("href");
