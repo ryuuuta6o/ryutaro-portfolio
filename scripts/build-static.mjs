@@ -16,6 +16,7 @@ await Promise.all([
   copyFile(join(root, "favicon.ico"), join(dist, "favicon.ico")),
   copyFile(join(root, "robots.txt"), join(dist, "robots.txt")),
   copyFile(join(root, "sitemap.xml"), join(dist, "sitemap.xml")),
+  cp(join(root, "en"), join(dist, "en"), { recursive: true }),
   copyFile(
     join(root, "Portfolio-original.html"),
     join(dist, "Portfolio-original.html"),
@@ -23,4 +24,4 @@ await Promise.all([
   cp(join(root, "assets"), join(dist, "assets"), { recursive: true }),
 ]);
 
-console.log("Built 3D portfolio into dist/");
+console.log("Built Japanese and English portfolio pages into dist/");

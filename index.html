@@ -12,15 +12,23 @@
   <meta property="og:url" content="https://ryutaro-portfolio-orpin.vercel.app/">
   <meta property="og:image" content="https://ryutaro-portfolio-orpin.vercel.app/assets/img/common/ogp.png">
   <meta property="og:site_name" content="Tachibana Ryutaro Portfolio">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale:alternate" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="橘 龍太朗 | AI導入・業務改善">
+  <meta name="twitter:description" content="現場の課題を、使われる仕組みへ。業務理解、顧客対話、生成AIによる試作と導入改善のポートフォリオ。">
+  <meta name="twitter:image" content="https://ryutaro-portfolio-orpin.vercel.app/assets/img/common/ogp.png">
   <link rel="canonical" href="https://ryutaro-portfolio-orpin.vercel.app/">
+  <link rel="alternate" hreflang="ja" href="https://ryutaro-portfolio-orpin.vercel.app/">
+  <link rel="alternate" hreflang="en" href="https://ryutaro-portfolio-orpin.vercel.app/en/">
+  <link rel="alternate" hreflang="x-default" href="https://ryutaro-portfolio-orpin.vercel.app/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/assets/img/common/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/portrait-fde-office.webp" as="image" type="image/webp">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260810c">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -82,7 +90,14 @@
       <a href="#works">WORKS</a>
       <a href="#profile">PROFILE</a>
     </nav>
-    <a class="header-cta" href="#contact">CONTACT</a>
+    <div class="header-actions">
+      <nav class="language-switch" aria-label="言語切替">
+        <a href="/" lang="ja" aria-current="page">JP</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/" lang="en" hreflang="en">EN</a>
+      </nav>
+      <a class="header-cta" href="#contact">CONTACT</a>
+    </div>
   </header>
 
   <button class="motion-toggle" type="button" aria-pressed="false">

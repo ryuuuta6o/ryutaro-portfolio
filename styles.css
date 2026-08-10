@@ -321,6 +321,57 @@ main,
   justify-self: end;
 }
 
+.header-actions {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.language-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--neutral-500);
+  font: 600 10px/1 var(--display);
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.language-switch a {
+  min-width: 24px;
+  min-height: 44px;
+  display: inline-grid;
+  place-items: center;
+  color: var(--neutral-400);
+  text-decoration: none;
+  transition: color var(--dur-short) var(--ease-out);
+}
+
+.language-switch a:hover,
+.language-switch a:focus-visible,
+.language-switch a[aria-current="page"] {
+  color: var(--accent);
+}
+
+.page-en .hero h1 {
+  max-width: 19ch;
+  font-size: 68px;
+  letter-spacing: -0.045em;
+}
+
+.page-en .hero__copy {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.page-en .profile__strengths {
+  margin-top: var(--space-lg);
+  color: var(--neutral-300);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
 .motion-toggle {
   position: fixed;
   z-index: var(--z-sticky);
@@ -1192,6 +1243,21 @@ button:disabled,
     width: min(560px, calc(100% - 24px));
   }
 
+  .page-en .hero h1 {
+    font-size: 50px;
+  }
+
+  .page-en .contact h2 {
+    max-width: 100%;
+    font-size: 32px;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .page-en .contact .title-line {
+    white-space: normal;
+  }
+
   .signal-rail,
   .hero__interaction-hint {
     display: none;
@@ -1360,6 +1426,26 @@ button:disabled,
   .hero h1 {
     font-size: clamp(39px, 10.7vw, 58px);
     letter-spacing: -0.07em;
+  }
+
+  .page-en .hero h1 {
+    width: 100%;
+    max-width: 100%;
+    font-size: 30px;
+    line-height: 1.12;
+    letter-spacing: -0.035em;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .language-switch {
+    gap: 3px;
+  }
+
+  .language-switch a {
+    min-width: 22px;
   }
 
   .hero__lead {

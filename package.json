@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "lint": "node scripts/check-site.mjs",
+    "typecheck": "node --check main.js && node --check scene.js && node --check scripts/build-static.mjs && node --check scripts/check-site.mjs",
     "build": "node scripts/build-static.mjs"
   },
   "dependencies": {
