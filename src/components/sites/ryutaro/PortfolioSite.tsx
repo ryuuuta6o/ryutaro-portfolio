@@ -385,8 +385,8 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
           <div className="section-inner">
             <div className="section-heading centered reveal">
               <span className="section-kicker">{t.skillsEyebrow}</span>
-              <h2>{t.skillsTitle}</h2>
-              <p>{t.skillsBody}</p>
+              <h2>{locale === "ja" ? t.skillsTitle.map((phrase) => <span className="heading-phrase" key={phrase}>{phrase}</span>) : t.skillsTitle.join("")}</h2>
+              <p>{locale === "ja" ? t.skillsBody.map((phrase) => <span className="copy-phrase" key={phrase}>{phrase}</span>) : t.skillsBody.join("")}</p>
             </div>
             <div className="skill-grid">
               {skills.map((skill, index) => (
@@ -436,7 +436,7 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
           <div className="section-inner contact-inner reveal">
             <span className="section-kicker">{t.contactEyebrow}</span>
             <h2>{t.contactTitle}</h2>
-            <p>{t.contactBody}</p>
+            <p>{locale === "ja" ? t.contactBody.map((phrase) => <span className="copy-phrase" key={phrase}>{phrase}</span>) : t.contactBody.join("")}</p>
             <div className="contact-actions">
               <a className="primary-action" href={identity.wantedly} target="_blank" rel="noopener noreferrer">{t.contactPrimary} <ArrowUpRight size={18} /></a>
               <a className="secondary-action" href={identity.github} target="_blank" rel="noopener noreferrer">{t.contactSecondary} <ArrowUpRight size={18} /></a>
