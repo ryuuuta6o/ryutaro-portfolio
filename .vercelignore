@@ -1,0 +1,4 @@
+outputs/
+.git/
+.next/
+node_modules/
