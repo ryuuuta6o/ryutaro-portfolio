@@ -7,8 +7,8 @@ const body = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryutaro-portfolio-orpin.vercel.app"),
-  title: "Ryutaro Tachibana | From field problems to working systems",
-  description: "The portfolio of Ryutaro Tachibana: 10 projects in business applications, websites, and design, built around field insight and AI-assisted implementation.",
+  title: "Ryutaro Tachibana | AI-enabled Web Marketing & Site Improvement",
+  description: "Ryutaro Tachibana's portfolio: field experience and a residential equipment service business inform websites, landing pages, SEO-conscious content, and inquiry-path improvement. Ten projects, including AI-assisted prototypes and business applications.",
   alternates: { canonical: "/en/", languages: { ja: "/", en: "/en/", "x-default": "/" } },
   robots: { index: true, follow: true },
 };

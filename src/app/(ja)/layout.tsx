@@ -7,8 +7,8 @@ const body = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryutaro-portfolio-orpin.vercel.app"),
-  title: "橘 龍太郎 | 現場の課題を、動く仕組みに。",
-  description: "橘 龍太郎のポートフォリオ。現場の課題を理解し、生成AIを活用して実際に動くシステムをつくる。業務アプリ、Webサイト、デザインの10作品を紹介します。",
+  title: "橘 龍太郎 | AI活用Webマーケティング・SEO・サイト改善",
+  description: "橘 龍太郎のポートフォリオ。住宅設備サービスの個人事業と顧客対応の経験を基に、Webサイト・LP制作、SEOを意識した情報設計、問い合わせ導線の改善に取り組む。生成AIを試作・検証に活用し、10作品を掲載。",
   alternates: { canonical: "/", languages: { ja: "/", en: "/en/", "x-default": "/" } },
   robots: { index: true, follow: true },
 };

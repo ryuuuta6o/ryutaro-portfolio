@@ -401,6 +401,14 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
                 </article>
               ))}
             </div>
+            <div className="marketing-focus reveal">
+              {t.marketingFocus.map(([label, body]) => (
+                <div className="marketing-focus-item" key={label}>
+                  <h3>{label}</h3>
+                  <p>{body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
         <section className="projects section" id="projects">
