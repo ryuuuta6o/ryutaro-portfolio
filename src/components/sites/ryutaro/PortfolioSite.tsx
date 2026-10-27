@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { MotionBackdrop } from "./MotionBackdrop";
 import { useSiteMotion } from "./useSiteMotion";
-import { copy, identity, projects, skills, type Locale, type Project } from "@/data/portfolio";
+import { copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
 
 const anchors = ["about", "skills", "projects", "contact"] as const;
 
@@ -75,12 +75,23 @@ function ProjectCard({
         <span className="project-category">{project.category[locale]}</span>
         <span className="project-number">/ {project.number}</span>
       </div>
-      <h3>{project.title[locale]}</h3>
+      <h3>{project.cardTitle?.[locale] ?? project.title[locale]}</h3>
       <p className="project-summary">{project.summary[locale]}</p>
       <div className="tag-row">
         {project.tags.map((tag) => <span className="tag" key={tag.ja}>{tag[locale]}</span>)}
       </div>
     </article>
+  );
+}
+
+function EvidenceImage({ evidence, locale, zoomed = false }: { evidence: ProjectEvidence; locale: Locale; zoomed?: boolean }) {
+  const size = evidence.kind === "aio" ? { width: 1042, height: 1571 } : { width: 1311, height: 852 };
+  return (
+    <span className={"evidence-image evidence-" + evidence.kind + (zoomed ? " is-zoomed" : "")}>
+      <img src={evidence.image} alt={evidence.alt[locale]} width={size.width} height={size.height} loading="lazy" />
+      <span className="evidence-outline evidence-outline-first" aria-hidden="true" />
+      {evidence.kind === "seo" && <span className="evidence-outline evidence-outline-second" aria-hidden="true" />}
+    </span>
   );
 }
 
@@ -95,14 +106,26 @@ function ProjectDialog({
 }) {
   const t = copy[locale];
   const closeRef = useRef<HTMLButtonElement>(null);
+  const zoomBackRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const dialogScrollRef = useRef<HTMLDivElement>(null);
+  const zoomScrollRef = useRef<HTMLDivElement>(null);
+  const savedDetailScrollRef = useRef(0);
+  const evidenceTriggerKindRef = useRef<ProjectEvidence["kind"] | null>(null);
   const [alternate, setAlternate] = useState(false);
+  const [zoomEvidence, setZoomEvidence] = useState<ProjectEvidence | null>(null);
   useEffect(() => {
     closeRef.current?.focus();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
+  }, []);
+  useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") onClose();
+      if (event.key === "Escape") {
+        if (zoomEvidence) setZoomEvidence(null);
+        else onClose();
+      }
       if (event.key !== "Tab") return;
       const focusable = dialogRef.current?.querySelectorAll<HTMLElement>("button, a[href]");
       if (!focusable?.length) return;
@@ -117,11 +140,17 @@ function ProjectDialog({
       }
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => {
-      document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", onKeyDown);
-    };
-  }, [onClose]);
+    return () => { window.removeEventListener("keydown", onKeyDown); };
+  }, [onClose, zoomEvidence]);
+  useEffect(() => {
+    if (zoomEvidence) {
+      zoomBackRef.current?.focus();
+      if (zoomScrollRef.current) zoomScrollRef.current.scrollTop = zoomEvidence.kind === "aio" ? 750 : 90;
+    } else if (evidenceTriggerKindRef.current) {
+      if (dialogScrollRef.current) dialogScrollRef.current.scrollTop = savedDetailScrollRef.current;
+      dialogRef.current?.querySelector<HTMLButtonElement>(`[data-evidence-kind="${evidenceTriggerKindRef.current}"]`)?.focus({ preventScroll: true });
+    }
+  }, [zoomEvidence]);
   const source = alternate && project.alternateImage ? project.alternateImage : project.fullImage || project.image;
   return (
     <div className="dialog-backdrop" onPointerDown={(event) => {
@@ -134,13 +163,26 @@ function ProjectDialog({
             <X size={21} strokeWidth={1.8} />
           </button>
         </div>
-        <div className="dialog-scroll">
+        <div className="dialog-scroll" ref={dialogScrollRef}>
+          {zoomEvidence ? (
+            <div className="evidence-zoom-view">
+              <div className="evidence-zoom-heading">
+                <button className="outline-action" type="button" ref={zoomBackRef} onClick={() => setZoomEvidence(null)}>
+                  <ArrowRight className="back-arrow" size={16} /> {locale === "ja" ? "作品詳細に戻る" : "Back to project"}
+                </button>
+                <h2>{zoomEvidence.title[locale]}</h2>
+              </div>
+              <div className="evidence-zoom-scroll" ref={zoomScrollRef}><EvidenceImage evidence={zoomEvidence} locale={locale} zoomed /></div>
+              <p className="evidence-zoom-caption">{zoomEvidence.caption[locale]}</p>
+            </div>
+          ) : (
+          <>
           <div className={"dialog-image" + (project.longImage ? " long-image" : "")}>
             <img src={source} alt={alternate ? project.title[locale] + " — 2" : project.alt[locale]} />
           </div>
           <div className="dialog-copy">
             <div>
-              <h2>{project.title[locale]}</h2>
+              <h2>{project.dialogSubtitle ? <>{project.cardTitle?.[locale]}<span className="dialog-title-subtitle">{project.dialogSubtitle[locale]}</span></> : project.title[locale]}</h2>
               {project.status && <span className="status-label">{project.status[locale]}</span>}
               <p>{project.detail[locale]}</p>
             </div>
@@ -157,6 +199,39 @@ function ProjectDialog({
               )}
             </div>
           </div>
+          {project.caseStudy && (
+            <div className="case-study">
+              <div className="case-study-sections">
+                {project.caseStudy.sections.map((section) => (
+                  <section className="case-study-section" key={section.heading.ja}>
+                    <h3>{section.heading[locale]}</h3>
+                    <p>{section.body[locale]}</p>
+                  </section>
+                ))}
+              </div>
+              <div className="case-study-evidence">
+                {project.caseStudy.evidence.map((evidence) => (
+                  <figure className="evidence-card" key={evidence.kind}>
+                    <h3>{evidence.title[locale]}</h3>
+                    <button className="evidence-preview" type="button" data-evidence-kind={evidence.kind} onClick={() => {
+                      savedDetailScrollRef.current = dialogScrollRef.current?.scrollTop ?? 0;
+                      evidenceTriggerKindRef.current = evidence.kind;
+                      setZoomEvidence(evidence);
+                    }} aria-label={(locale === "ja" ? "画像全体を拡大 : " : "Expand full image: ") + evidence.title[locale]}>
+                      <EvidenceImage evidence={evidence} locale={locale} />
+                      <span className="evidence-expand"><Maximize2 size={16} />{locale === "ja" ? "画像全体を拡大" : "Expand full image"}</span>
+                    </button>
+                    <figcaption>{evidence.caption[locale]}</figcaption>
+                    <div className="evidence-readout">
+                      {evidence.highlights.map((highlight) => <p key={highlight.ja}>{highlight[locale]}</p>)}
+                    </div>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )}
+          </>
+          )}
         </div>
       </div>
     </div>

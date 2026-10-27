@@ -1,10 +1,26 @@
 export type Locale = "ja" | "en";
 export type Localized = Record<Locale, string>;
 
+export type ProjectEvidence = {
+  kind: "aio" | "seo";
+  title: Localized;
+  caption: Localized;
+  image: string;
+  alt: Localized;
+  highlights: Localized[];
+};
+
+export type ProjectCaseStudy = {
+  sections: { heading: Localized; body: Localized }[];
+  evidence: ProjectEvidence[];
+};
+
 export type Project = {
   id: string;
   number: string;
   title: Localized;
+  cardTitle?: Localized;
+  dialogSubtitle?: Localized;
   category: Localized;
   summary: Localized;
   detail: Localized;
@@ -17,6 +33,7 @@ export type Project = {
   badge: Localized;
   href?: string;
   status?: Localized;
+  caseStudy?: ProjectCaseStudy;
 };
 
 export const identity = {
@@ -34,12 +51,12 @@ export const copy = {
   ja: {
     nav: ["ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
     hire: "連絡する",
-    eyebrow: "FIELD EXPERIENCE × WEB GROWTH",
-    heroLine: "現場を知り、",
-    heroAccent: "Webを育てる。",
+    eyebrow: "AI × WEB MARKETING",
+    heroLine: "AIで仕組みをつくり、",
+    heroAccent: "Webの集客を改善する。",
     heroBody: [
-      ["住宅設備サービスの", "個人事業を運営し、", "顧客対応から", "見積・発注・精算まで", "担当しています。"],
-      ["Webサイト・LPの制作、", "SEOを意識した情報設計、", "問い合わせ導線の改善に取り組み、", "生成AIを試作と検証に活用しています。"],
+      ["顧客対応・現場業務・個人事業の運営経験を活かし、", "生成AIを用いたWebサイト・LP制作、", "SEOを意識した情報設計、", "問い合わせ導線の改善に取り組んでいます。"],
+      ["企画・制作から動作確認、運用改善まで、", "実際に使う人の視点で進めています。"],
     ],
     heroPrimary: "制作実績を見る",
     heroSecondary: "私について",
@@ -48,8 +65,8 @@ export const copy = {
     aboutTitle: "現場を知ることから、\nつくり始める。",
     aboutLead: "橘 龍太郎",
     aboutBody: [
-      "昇降機の保守・点検・修理を約7年、家電修理を約3年経験。2023年から住宅設備サービスの個人事業を運営し、顧客ヒアリング、現場確認、見積、発注、精算まで担当しています。現場で得た情報を、使う人に伝わるWebサイトやLP、問い合わせ導線の設計につなげています。",
-      "制作では見出し構造や対応地域の情報、LINE・フォームへの導線を検討し、公開前後の画面を確認して改善しています。ChatGPT、Claude Code、Codexは要件整理やコーディングの支援に使用。本人が情報・要件と画面の判断、動作確認、修正方針を担っています。",
+      "昇降機の保守・点検・修理を約7年、家電修理を約3年経験。2023年から住宅設備サービスの個人事業を運営し、顧客ヒアリング、現場確認、見積、発注、精算を担当しています。現場で受けた相談を、サービス内容・料金・対応地域の整理や、Webサイト・LPの情報設計に生かしています。",
+      "生成AIを活用してWebサイト・LPや業務システムを試作・構築し、画面の動作と相談までの導線を確認・改善しています。ChatGPT、Claude Code、Codexは要件整理や実装の支援に使用し、掲載内容・要件・画面の判断、動作確認、修正方針は本人が担っています。",
     ],
     aboutCards: [
       ["01", "現場の理解", "利用者の声と業務の流れから、解くべき課題を整理します。"],
@@ -61,12 +78,12 @@ export const copy = {
     skillsTitle: ["制作から", "改善まで。"],
     skillsBody: ["制作・設計の経験と、", "今後深めたいWeb集客の領域を", "分けて紹介します。"],
     marketingFocus: [
-      ["取り組んだこと", "Webサイト・LPの情報設計、見出し構造や地域情報などSEOを意識した内部対策の検討、LINE・フォームの導線整備。公開前後の画面を確認して改善しています。"],
-      ["今後深めること", "テクニカルSEO、AIO・LLMO/GEO、LPO・CRO、効果測定を実務で学び、施策から検証まで携わりたいと考えています。"],
+      ["取り組んだこと", "Webサイト・LPの情報設計、SEO・AIOのチェックリストに基づく自社サイトの点検・改善、LINE・フォームの導線整備。検索順位の計測画面と生成AI回答での事業名掲載も確認しました。"],
+      ["今後深めること", "テクニカルSEO、AIO・LLMO/GEOの継続観測、LPO・CRO、流入から問い合わせまでの効果測定を実務で深めたいと考えています。"],
     ],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "制作実績",
-    projectsBody: "Webサイト・LPと問い合わせ導線、業務アプリ、Web改善の試作など10作品を掲載しています。開発中の作品はその状態を明記しています。",
+    projectsBody: "自社サービスのサイト改善、LPと問い合わせ導線、業務アプリなど10作品を掲載しています。開発中の作品はその状態を明記しています。",
     viewAll: "すべての10作品を見る",
     viewLess: "代表作品のみ表示",
     viewDetails: "画面を拡大",
@@ -91,17 +108,17 @@ export const copy = {
     motionOn: "動きをON",
     modalLabel: "作品の拡大表示",
     noPublicLink: "公開リンクなし",
-    workNote: "制作内容は本人の職務経歴書と実際の画面に基づきます。検索順位や集客成果など、未確認の数値は掲載していません。",
+    workNote: "検索順位と生成AI回答への掲載は、SEO・AIOのチェックリストに基づく改善後に添付画像で確認した結果です。順位は確認時点の表示値です。",
   },
   en: {
     nav: ["ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
     hire: "Get in touch",
-    eyebrow: "FIELD EXPERIENCE × WEB GROWTH",
-    heroLine: "Know the work.",
-    heroAccent: "Make the web work.",
+    eyebrow: "AI × WEB MARKETING",
+    heroLine: "Build with AI.",
+    heroAccent: "Improve the web.",
     heroBody: [
-      ["I run a residential equipment service business, handling customer inquiries through estimates, orders, and settlement."],
-      ["I build websites and landing pages, improve inquiry paths, plan SEO-conscious content, and use generative AI to support prototyping and testing."],
+      ["I draw on customer service, field work, and running my own business to build websites and landing pages with AI assistance, structure SEO-conscious content, and improve paths to inquiry."],
+      ["I work from planning and production through functional checks and ongoing improvement, with the people using the site in mind."],
     ],
     heroPrimary: "Explore projects",
     heroSecondary: "About me",
@@ -110,8 +127,8 @@ export const copy = {
     aboutTitle: "Start with the people\nand the workflow.",
     aboutLead: "Ryutaro Tachibana",
     aboutBody: [
-      "I spent about seven years in elevator maintenance, inspection, and repair, followed by about three years in appliance repair. Since 2023, I have run a residential equipment service business, handling interviews, site checks, estimates, orders, and settlement. That field experience informs how I structure service websites, landing pages, and inquiry paths.",
-      "In web projects, I review heading structure, service-area information, and paths to LINE and forms, then check and improve the screens before and after launch. I use ChatGPT, Claude Code, and Codex to support requirements work and coding. I remain responsible for decisions about content, requirements, screens, testing, and revisions.",
+      "I spent about seven years in elevator maintenance, inspection, and repair, followed by about three years in appliance repair. Since 2023, I have run a residential equipment service business, handling customer interviews, site checks, estimates, orders, and settlement. I use field questions to organize services, prices, service areas, and the information architecture of websites and landing pages.",
+      "I use generative AI to help prototype and build websites, landing pages, and business systems, then check the screens and paths to inquiry. ChatGPT, Claude Code, and Codex support requirements work and implementation; I make decisions about content, requirements, screens, functional checks, and revisions.",
     ],
     aboutCards: [
       ["01", "Understand the field", "Listen to users and map the workflow before defining the problem."],
@@ -123,12 +140,12 @@ export const copy = {
     skillsTitle: ["From build to improvement."],
     skillsBody: ["I distinguish work shown in this portfolio from web-growth skills I plan to develop next."],
     marketingFocus: [
-      ["Work completed", "Website and landing-page structure, SEO-conscious internal content such as headings and service-area information, and paths to LINE and contact forms. I review and improve screens around launch."],
-      ["Areas to develop", "Technical SEO, AI search visibility (AIO/LLMO/GEO), landing-page and conversion optimization, and outcome measurement through hands-on work."],
+      ["Work completed", "Website and landing-page structure, checks and improvements to my own site guided by an SEO and AI-search checklist, and paths to LINE and contact forms. I also observed search-position displays and a mention of my business in an AI-generated answer."],
+      ["Areas to develop", "Deeper technical SEO, continued observation of AI search visibility (AIO/LLMO/GEO), landing-page and conversion optimization, and measurement from visits through inquiries."],
     ],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "Selected work",
-    projectsBody: "Ten projects spanning websites, landing pages, inquiry paths, business applications, and web-improvement prototypes. Work in progress is labelled as such.",
+    projectsBody: "Ten projects spanning my own service site's improvements, landing pages and inquiry paths, and business applications. Work in progress is labelled as such.",
     viewAll: "View all 10 projects",
     viewLess: "Show featured projects",
     viewDetails: "Expand screen",
@@ -153,7 +170,7 @@ export const copy = {
     motionOn: "Enable motion",
     modalLabel: "Expanded project screen",
     noPublicLink: "No public link",
-    workNote: "Project descriptions draw on my career history and actual screens. Unverified search rankings, traffic, and acquisition results are omitted.",
+    workNote: "The search positions and AI-answer mention were observed in the supplied screenshots after improvements guided by the SEO and AI-search checklist. Positions reflect the captured point in time.",
   },
 } as const;
 
@@ -188,7 +205,7 @@ export const skills = [
   },
 ] as const;
 
-export const projects: Project[] = [
+const projectEntries: Project[] = [
   {
     id: "kyn", number: "01",
     title: { ja: "KYNエアコンサービス", en: "KYN Air Conditioning Service" },
@@ -264,15 +281,62 @@ export const projects: Project[] = [
   },
   {
     id: "ouchi", number: "07",
-    title: { ja: "おうちのなんでも屋", en: "Ouchi no Nandemoya" },
-    category: { ja: "サービスサイト", en: "Service website" },
-    summary: { ja: "暮らしのサービスを探しやすく伝えるサイト。", en: "A website making household services easier to browse." },
-    detail: { ja: "提供するサービスを見つけやすい構成に整理した制作実績です。公開サイトのリンクを掲載しています。成果数値は確認できていません。", en: "A project organizing household service information for easier discovery. A public link is available. Measured outcomes have not been verified." },
+    title: { ja: "おうちのなんでも屋｜Web制作・SEO・AI検索への取り組み", en: "Ouchi no Nandemoya | Web, SEO & AI Search" },
+    cardTitle: { ja: "おうちのなんでも屋", en: "Ouchi no Nandemoya" },
+    dialogSubtitle: { ja: "Web制作・SEO・AI検索への取り組み", en: "Web, SEO & AI Search" },
+    category: { ja: "自社サービス・運用中", en: "Own service · live" },
+    summary: { ja: "SEO・AIOのチェックリストを作成し、自社サイトを改善。順位計測画面で名古屋の暖房関連2語が5位・7位、生成AI回答にも事業名が掲載されました。", en: "Created and applied an SEO and AI-search checklist to my own site. A ranking screenshot showed two Nagoya heating queries at positions 5 and 7; an AI-generated answer also mentioned the business." },
+    detail: { ja: "自社事業のWebサイトで、サービス情報を探しやすくし、問い合わせにつながる導線を整えています。SEO・AIOの点検と確認結果を、実際の画面とともに紹介します。", en: "For my own service business, I organize service information and paths to inquiry. The case study shows the site's SEO and AI-search checks alongside the actual evidence screens." },
     image: "/sites/ryutaro/ouchi-homepage-cover.jpg",
     alt: { ja: "おうちのなんでも屋のホームページ画面", en: "Ouchi no Nandemoya home page screen" },
-    tags: [{ ja: "Webサイト", en: "Website" }, { ja: "情報設計", en: "Information design" }],
+    tags: [{ ja: "Web制作", en: "Web production" }, { ja: "SEO・AIO", en: "SEO & AI search" }, { ja: "自社事業", en: "Own business" }],
     badge: { ja: "サイト画面", en: "Website screen" },
     href: "https://ouchi-nandemoya.com/",
+    caseStudy: {
+      sections: [
+        {
+          heading: { ja: "事業・利用者の課題", en: "The problem" },
+          body: { ja: "エアコンの不調を調べる人が、症状ごとの対応内容、料金の目安、相談方法を見つけやすいサイトにすること。自社事業で受けた相談を情報設計に生かしました。", en: "People researching an air-conditioner problem need to find relevant services, indicative prices, and a clear way to ask for help. I used questions from my own service business to guide the information structure." },
+        },
+        {
+          heading: { ja: "実施したこと", en: "What I did" },
+          body: { ja: "SEO・AIOの観点を整理したチェックリストを作成し、サービス内容、症状別ページ、料金・対応地域の説明、内部リンク、メタデータ、フォーム・LINEへの導線を点検・改善しました。", en: "I created a checklist covering SEO and AI search, then checked and improved service information, symptom pages, pricing and service-area explanations, internal links, metadata, and paths to forms and LINE." },
+        },
+        {
+          heading: { ja: "本人の担当とAIの活用", en: "My role and AI assistance" },
+          body: { ja: "本人は現場で得た情報を提供し、掲載内容と要件を判断して、公開画面・相談導線を確認しました。生成AIツールは要件整理や制作・実装の支援に活用しています。", en: "I supplied field information, decided what the site should say and how it should work, and checked the published screens and inquiry paths. Generative AI tools supported requirements work, production, and implementation." },
+        },
+        {
+          heading: { ja: "確認できた結果", en: "Observed results" },
+          body: { ja: "その取り組みの成果として、添付の順位計測画面では「名古屋 エアコン 暖房が弱い」が5位、「名古屋 エアコン 暖房 修理」が7位に表示され、生成AIの回答にも「おうちのなんでも屋」の事業名が掲載されました。", en: "As an outcome of this work, the supplied ranking screen displayed position 5 for ‘Nagoya air conditioner weak heating’ and position 7 for ‘Nagoya air conditioner heating repair’. An AI-generated answer also mentioned Ouchi no Nandemoya by name." },
+        },
+        {
+          heading: { ja: "今後の改善", en: "Next steps" },
+          body: { ja: "計測条件と日時を記録して表示の推移を確認し、検索流入から問い合わせまでの効果を検証します。", en: "I plan to record measurement conditions and dates, follow how visibility changes, and evaluate the path from search visits to inquiries." },
+        },
+      ],
+      evidence: [
+        {
+          kind: "aio",
+          title: { ja: "AIの回答に『おうちのなんでも屋』が掲載", en: "Ouchi no Nandemoya appears in an AI-generated answer" },
+          caption: { ja: "『エアコン修理名古屋』という質問への生成AIの回答で、事業名の掲載を確認しました。", en: "The business name appeared in an AI-generated answer to a question about air-conditioner repair in Nagoya." },
+          image: "/sites/ryutaro/ouchi-ai-answer.jpg",
+          alt: { ja: "『エアコン修理名古屋』への生成AI回答。おうちのなんでも屋とサービス説明の行を赤枠で強調", en: "AI-generated answer about air-conditioner repair in Nagoya, with the Ouchi no Nandemoya row outlined in red" },
+          highlights: [{ ja: "おうちのなんでも屋 — 名古屋市を中心に修理・クリーニング・工事に対応。症状別の原因や料金を掲載。", en: "Ouchi no Nandemoya — Serves Nagoya and nearby areas with repairs, cleaning, and installation; explains causes by symptom and provides pricing information." }],
+        },
+        {
+          kind: "seo",
+          title: { ja: "地域と暖房に関する2語が10位以内に表示", en: "Two local heating queries appeared in the top ten" },
+          caption: { ja: "順位計測画面で『名古屋 エアコン 暖房が弱い』5位、『名古屋 エアコン 暖房 修理』7位を確認。画像取得時点の表示値です。", en: "The supplied ranking screen showed positions 5 and 7 for the two Nagoya heating queries at the time the image was captured." },
+          image: "/sites/ryutaro/ouchi-seo-ranking.png",
+          alt: { ja: "順位計測画面。暖房関連の2語と5位・7位の表示行を赤枠で強調", en: "Ranking screenshot with the two heating queries and positions 5 and 7 outlined in red" },
+          highlights: [
+            { ja: "名古屋 エアコン 暖房が弱い — 5位", en: "Nagoya air conditioner weak heating — position 5" },
+            { ja: "名古屋 エアコン 暖房 修理 — 7位", en: "Nagoya air conditioner heating repair — position 7" },
+          ],
+        },
+      ],
+    },
   },
   {
     id: "electric-lp", number: "08",
@@ -310,3 +374,14 @@ export const projects: Project[] = [
     badge: { ja: "制作画像", en: "Actual design" },
   },
 ];
+
+const projectOrder = [
+  "ouchi", "aircon-lp", "kyn", "ai-lp-audit", "electric-lp",
+  "settlement", "photo-estimate", "macro", "banner", "line-menu",
+];
+
+export const projects: Project[] = projectOrder.map((id, index) => {
+  const project = projectEntries.find((entry) => entry.id === id);
+  if (!project) throw new Error(`Unknown portfolio project: ${id}`);
+  return { ...project, number: String(index + 1).padStart(2, "0") };
+});
