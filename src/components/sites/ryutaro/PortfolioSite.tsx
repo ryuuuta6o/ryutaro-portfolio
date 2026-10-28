@@ -15,6 +15,7 @@ import {
   X,
 } from "lucide-react";
 import { MotionBackdrop } from "./MotionBackdrop";
+import { SeoProgressReport } from "./SeoProgressReport";
 import { useSiteMotion } from "./useSiteMotion";
 import { copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
 
@@ -127,7 +128,7 @@ function ProjectDialog({
         else onClose();
       }
       if (event.key !== "Tab") return;
-      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>("button, a[href]");
+      const focusable = dialogRef.current?.querySelectorAll<HTMLElement>("button, a[href], summary");
       if (!focusable?.length) return;
       const first = focusable[0];
       const last = focusable[focusable.length - 1];
@@ -187,6 +188,18 @@ function ProjectDialog({
               <p>{project.detail[locale]}</p>
             </div>
             <div className="dialog-links">
+              {project.caseStudy?.report === "ouchi-seo" && (
+                <button className="outline-action seo-report-jump" type="button" onClick={() => {
+                  const report = dialogRef.current?.querySelector<HTMLElement>(".seo-report");
+                  const scroller = dialogScrollRef.current;
+                  report?.focus({ preventScroll: true });
+                  if (report && scroller) {
+                    scroller.scrollTo({ top: scroller.scrollTop + report.getBoundingClientRect().top - scroller.getBoundingClientRect().top, behavior: "instant" });
+                  }
+                }}>
+                  {locale === "ja" ? "SEO改善レポートを見る" : "View SEO progress report"} <ArrowDown size={16} />
+                </button>
+              )}
               {project.alternateImage && (
                 <button className="outline-action" type="button" onClick={() => setAlternate((value) => !value)}>
                   {t.nextImage} <ArrowRight size={16} />
@@ -209,6 +222,7 @@ function ProjectDialog({
                   </section>
                 ))}
               </div>
+              {project.caseStudy.report === "ouchi-seo" && <SeoProgressReport locale={locale} />}
               <div className="case-study-evidence">
                 {project.caseStudy.evidence.map((evidence) => (
                   <figure className="evidence-card" key={evidence.kind}>

@@ -238,6 +238,58 @@ img { display: block; max-width: 100%; }
 .case-study-section h3, .evidence-card h3 { margin: 0 0 10px; color: #e9fbfd; font-size: clamp(19px, 2vw, 23px); line-height: 1.4; }
 .case-study-section p { max-width: 67ch; margin: 0; color: #c8d9dd; font-size: 16px; line-height: 1.8; }
 .case-study-evidence { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 22px; margin-top: 14px; }
+.seo-report { margin: 12px 0 36px; padding: 30px 0; border-top: 1px solid rgba(0,255,255,.4); border-bottom: 1px solid rgba(0,255,255,.25); }
+.seo-report p { margin: 12px 0; color: #c8d9dd; font-size: 16px; line-height: 1.8; }
+.seo-report .seo-report-eyebrow { margin-top: 0; color: var(--cyan); font-size: 12px; letter-spacing: .12em; }
+.seo-report h3 { margin: 0 0 18px; color: #effdff; font-size: clamp(25px, 3vw, 34px); line-height: 1.45; text-wrap: balance; }
+.seo-report-title-part { display: inline-block; }
+.seo-report h4 { margin: 30px 0 12px; color: #e9fbfd; font-size: 20px; line-height: 1.5; }
+.seo-report-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 28px 0 18px; border-block: 1px solid rgba(160,209,219,.22); }
+.seo-report-metric { min-width: 0; padding: 22px 24px; background: linear-gradient(140deg, rgba(0,255,255,.055), transparent); }
+.seo-report-metric + .seo-report-metric { border-left: 1px solid rgba(160,209,219,.22); }
+.seo-report-metric h4 { margin: 0 0 12px; font-size: 17px; }
+.seo-report .seo-report-values { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px; margin: 0; font-size: clamp(26px, 3vw, 40px); font-variant-numeric: tabular-nums; line-height: 1.35; }
+.seo-report-values strong { color: #eaffff; font-size: 1.25em; font-weight: 650; }
+.seo-report .seo-report-arrow { align-self: center; color: #85b6bd; font-size: 24px; }
+.seo-report .seo-report-ratio { margin: 8px 0 0; color: var(--cyan); font-size: 18px; font-weight: 700; }
+.seo-report .seo-report-period { color: #e4f6f8; font-size: 15px; }
+.seo-report .seo-report-source, .seo-report .seo-report-note { font-size: 14px; line-height: 1.8; }
+.seo-report-periods { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.seo-period { min-width: 0; padding: 16px 0; border-top: 1px solid rgba(160,209,219,.25); }
+.seo-period h5 { margin: 0; color: #a7eaf0; font-size: 16px; font-weight: 650; }
+.seo-report .seo-period-date { margin: 10px 0 16px; font-size: 17px; color: #e4f6f8; }
+.seo-period-date span { display: block; font-size: 12px; color: #b1c9cf; }
+.seo-period dl { margin: 0; }
+.seo-period dl div { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 7px 0; font-size: 14px; line-height: 1.6; }
+.seo-period dt { color: #c8d9dd; }
+.seo-period dd { margin: 0; color: #f2fcff; font-variant-numeric: tabular-nums; font-size: 17px; }
+.seo-rank-table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 16px; line-height: 1.7; }
+.seo-rank-table th, .seo-rank-table td { padding: 15px 12px; border-bottom: 1px solid rgba(160,209,219,.2); text-align: right; }
+.seo-rank-table thead th { color: #bed7dc; font-size: 13px; font-weight: 500; }
+.seo-rank-table th:first-child { width: 65%; padding-left: 0; text-align: left; }
+.seo-rank-table tbody th { color: #e4f6f8; font-weight: 500; overflow-wrap: anywhere; }
+.seo-rank-table td { color: #c8d9dd; font-variant-numeric: tabular-nums; font-size: 19px; }
+.seo-rank-table td strong { color: var(--cyan); }
+.seo-rank-table small { display: block; font-size: 13px; font-weight: 400; color: #b1c9cf; }
+.seo-report-technical { margin-top: 28px; padding: 0 0 0 18px; border-left: 2px solid #529da6; }
+.seo-report-technical h4 { margin-top: 0; }
+.seo-report-conditions { margin-top: 26px; border-top: 1px solid rgba(160,209,219,.25); }
+.seo-report-conditions summary { padding: 20px 0; color: #d7f9fc; font-size: 16px; line-height: 1.7; cursor: pointer; }
+.seo-report-conditions summary:hover { color: var(--cyan); }
+.seo-report-conditions summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+.seo-report-conditions ul { margin: 0; padding: 0 0 0 22px; color: #c8d9dd; font-size: 14px; line-height: 1.9; }
+.seo-report-conditions li + li { margin-top: 12px; }
+@media (max-width: 740px) {
+  .seo-report-metrics { grid-template-columns: 1fr; }
+  .seo-report-metric { padding: 20px 14px; }
+  .seo-report-metric + .seo-report-metric { border-left: 0; border-top: 1px solid rgba(160,209,219,.22); }
+  .seo-report .seo-report-values { font-size: 34px; gap: 10px; }
+  .seo-report-periods { grid-template-columns: 1fr; gap: 4px; }
+  .seo-period dl div { font-size: 15px; }
+  .seo-rank-table th:first-child { width: 60%; }
+  .seo-rank-table th, .seo-rank-table td { padding: 12px 5px; }
+  .seo-rank-table tbody th { font-size: 15px; }
+}
 .evidence-card { min-width: 0; margin: 0; padding-top: 22px; border-top: 1px solid rgba(0,255,255,.32); }
 .evidence-card h3 { min-height: 2.8em; }
 .evidence-preview { display: block; width: 100%; padding: 0; border: 1px solid rgba(168,207,219,.22); border-radius: 11px; overflow: hidden; color: #fff; background: #060a0c; cursor: zoom-in; text-align: left; }

@@ -13,6 +13,7 @@ export type ProjectEvidence = {
 export type ProjectCaseStudy = {
   sections: { heading: Localized; body: Localized }[];
   evidence: ProjectEvidence[];
+  report?: "ouchi-seo";
 };
 
 export type Project = {
@@ -108,7 +109,7 @@ export const copy = {
     motionOn: "動きをON",
     modalLabel: "作品の拡大表示",
     noPublicLink: "公開リンクなし",
-    workNote: "検索順位と生成AI回答への掲載は、SEO・AIOのチェックリストに基づく改善後に添付画像で確認した結果です。順位は確認時点の表示値です。",
+    workNote: "自社サイトの改善を、検索データと実際の画面で紹介しています。作品詳細に比較期間・計測条件・本人の担当範囲を掲載しています。",
   },
   en: {
     nav: ["ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
@@ -170,7 +171,7 @@ export const copy = {
     motionOn: "Enable motion",
     modalLabel: "Expanded project screen",
     noPublicLink: "No public link",
-    workNote: "The search positions and AI-answer mention were observed in the supplied screenshots after improvements guided by the SEO and AI-search checklist. Positions reflect the captured point in time.",
+    workNote: "Search data and actual screens document improvements to my own business website. The project details include comparison periods, measurement conditions, and my role.",
   },
 } as const;
 
@@ -285,14 +286,15 @@ const projectEntries: Project[] = [
     cardTitle: { ja: "おうちのなんでも屋", en: "Ouchi no Nandemoya" },
     dialogSubtitle: { ja: "Web制作・SEO・AI検索への取り組み", en: "Web, SEO & AI Search" },
     category: { ja: "自社サービス・運用中", en: "Own service · live" },
-    summary: { ja: "SEO・AIOのチェックリストを作成し、自社サイトを改善。順位計測画面で名古屋の暖房関連2語が5位・7位、生成AI回答にも事業名が掲載されました。", en: "Created and applied an SEO and AI-search checklist to my own site. A ranking screenshot showed two Nagoya heating queries at positions 5 and 7; an AI-generated answer also mentioned the business." },
-    detail: { ja: "自社事業のWebサイトで、サービス情報を探しやすくし、問い合わせにつながる導線を整えています。SEO・AIOの点検と確認結果を、実際の画面とともに紹介します。", en: "For my own service business, I organize service information and paths to inquiry. The case study shows the site's SEO and AI-search checks alongside the actual evidence screens." },
+    summary: { ja: "チェックリストに基づき自社サイトのSEO・AIOを改善。各28日間の保存データ比較で、検索クリック19→38、表示回数840→1,750。施策と検証結果を紹介します。", en: "Improved my own site's SEO and AI search using a checklist. Saved 28-day search data showed clicks of 19→38 and impressions of 840→1,750. Explore the work and its measured results." },
+    detail: { ja: "自社事業のWebサイトで、サービス情報を探しやすくし、問い合わせにつながる導線を整えています。チェックリストを作成し、情報整理・制作・改善から検索データの確認まで継続。2026年10月28日の運用レポートから、施策・担当範囲・検証結果を紹介します。", en: "For my own service business, I organize service information and paths to inquiry. I created a checklist and continued through content organization, production, improvements, and search-data reviews. This case study selects actions, responsibilities, and findings from the October 28, 2026 operations report." },
     image: "/sites/ryutaro/ouchi-homepage-cover.jpg",
     alt: { ja: "おうちのなんでも屋のホームページ画面", en: "Ouchi no Nandemoya home page screen" },
     tags: [{ ja: "Web制作", en: "Web production" }, { ja: "SEO・AIO", en: "SEO & AI search" }, { ja: "自社事業", en: "Own business" }],
     badge: { ja: "サイト画面", en: "Website screen" },
     href: "https://ouchi-nandemoya.com/",
     caseStudy: {
+      report: "ouchi-seo",
       sections: [
         {
           heading: { ja: "事業・利用者の課題", en: "The problem" },
@@ -304,15 +306,15 @@ const projectEntries: Project[] = [
         },
         {
           heading: { ja: "本人の担当とAIの活用", en: "My role and AI assistance" },
-          body: { ja: "本人は現場で得た情報を提供し、掲載内容と要件を判断して、公開画面・相談導線を確認しました。生成AIツールは要件整理や制作・実装の支援に活用しています。", en: "I supplied field information, decided what the site should say and how it should work, and checked the published screens and inquiry paths. Generative AI tools supported requirements work, production, and implementation." },
+          body: { ja: "本人は現場で得た相談やサービス情報を整理し、掲載内容・要件・改善の優先度を判断。公開画面、相談導線、検索データを確認しています。ChatGPT・Claude Code・Codexなどを、要件整理や制作・実装・確認作業の支援に活用しています。", en: "I organize customer questions and service information, decide content, requirements, and improvement priorities, and review published screens, inquiry paths, and search data. ChatGPT, Claude Code, and Codex support requirements work, production, implementation, and checks." },
         },
         {
           heading: { ja: "確認できた結果", en: "Observed results" },
-          body: { ja: "その取り組みの成果として、添付の順位計測画面では「名古屋 エアコン 暖房が弱い」が5位、「名古屋 エアコン 暖房 修理」が7位に表示され、生成AIの回答にも「おうちのなんでも屋」の事業名が掲載されました。", en: "As an outcome of this work, the supplied ranking screen displayed position 5 for ‘Nagoya air conditioner weak heating’ and position 7 for ‘Nagoya air conditioner heating repair’. An AI-generated answer also mentioned Ouchi no Nandemoya by name." },
+          body: { ja: "改善の取り組みを続ける中で、各28日間の比較では検索クリックが19→38、表示回数が840→1,750に増加。地域・症状別の検索順位にも改善が見られ、生成AIの回答内で事業名の掲載も確認しました。比較期間と途中経過は下のレポートにまとめています。", en: "During ongoing improvement work, comparable 28-day records showed search clicks rising from 19 to 38 and impressions from 840 to 1,750. Some local symptom-related queries improved in rank, and an AI-generated answer mentioned the business. The report below gives the periods and intermediate results." },
         },
         {
           heading: { ja: "今後の改善", en: "Next steps" },
-          body: { ja: "計測条件と日時を記録して表示の推移を確認し、検索流入から問い合わせまでの効果を検証します。", en: "I plan to record measurement conditions and dates, follow how visibility changes, and evaluate the path from search visits to inquiries." },
+          body: { ja: "CTRと検索順位の継続確認、未確定のキーワードの検証、検索流入から相談までの計測を進めます。問い合わせ・売上の増加は、実顧客のデータを確認してから評価します。", en: "Next steps are to monitor CTR and rankings, verify queries with unresolved data, and measure the path from search visits to inquiries. Inquiry and revenue growth will be evaluated using verified real-customer data." },
         },
       ],
       evidence: [
