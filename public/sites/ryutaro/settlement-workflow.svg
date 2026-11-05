@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+  <title id="title">Business workflow diagram</title>
+  <desc id="desc">Intake leads to an estimate, an order to a partner contractor, and settlement. Exceptional fee calculations require human review.</desc>
+  <defs>
+    <linearGradient id="surface" x2="1" y2="1">
+      <stop stop-color="#10303b"/>
+      <stop offset="1" stop-color="#08151d"/>
+    </linearGradient>
+    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
+      <path d="M0 36V0h36" fill="none" stroke="#a6f6ff" stroke-opacity=".08"/>
+    </pattern>
+    <marker id="arrow" viewBox="0 0 8 8" refX="6" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="m1 1 5 3-5 3" fill="none" stroke="#75dce4" stroke-width="1.4"/>
+    </marker>
+  </defs>
+  <rect width="960" height="540" fill="url(#surface)"/>
+  <rect width="960" height="540" fill="url(#grid)"/>
+  <g font-family="system-ui, sans-serif">
+    <text x="52" y="68" fill="#83eef1" font-size="20" font-weight="700" letter-spacing="4">BUSINESS WORKFLOW</text>
+    <text x="52" y="114" fill="#edfaff" font-size="34" font-weight="700">From intake to settlement</text>
+    <g fill="#10232d" stroke="#497987" stroke-width="1.5">
+      <rect x="52" y="163" width="184" height="151" rx="18"/>
+      <rect x="276" y="163" width="184" height="151" rx="18"/>
+      <rect x="500" y="163" width="184" height="151" rx="18"/>
+      <rect x="724" y="163" width="184" height="151" rx="18" stroke="#83eef1"/>
+    </g>
+    <g fill="#83eef1" font-size="26" font-weight="700">
+      <text x="72" y="210">01</text><text x="296" y="210">02</text>
+      <text x="520" y="210">03</text><text x="744" y="210">04</text>
+    </g>
+    <g fill="#edfaff" font-size="23" font-weight="700">
+      <text x="72" y="267">Intake</text><text x="296" y="267">Estimate</text>
+      <text x="520" y="267">Partner order</text><text x="744" y="267">Settlement</text>
+    </g>
+    <g stroke="#75dce4" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+      <path d="M242 239h24"/><path d="M466 239h24"/><path d="M690 239h24"/>
+    </g>
+    <path d="M816 314v64" stroke="#75dce4" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+    <rect x="500" y="390" width="408" height="82" rx="16" fill="#0a2932" stroke="#498b95"/>
+    <text x="523" y="424" fill="#b8f9f9" font-size="23" font-weight="700">Human review</text>
+    <text x="523" y="451" fill="#bfdae2" font-size="17">For exceptional fee calculations</text>
+  </g>
+</svg>

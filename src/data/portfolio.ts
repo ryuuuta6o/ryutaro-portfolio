@@ -34,30 +34,37 @@ export type Project = {
   badge: Localized;
   href?: string;
   status?: Localized;
+  featured?: boolean;
   caseStudy?: ProjectCaseStudy;
 };
 
 export const identity = {
   name: { ja: "橘 龍太郎", en: "Ryutaro Tachibana" },
   roles: {
-    ja: "AI活用Webマーケティング・SEO・サイト改善を志望",
-    en: "Seeking AI-enabled web marketing, SEO, and site improvement roles",
+    ja: "AI導入支援・業務自動化・生成AI活用支援を志望",
+    en: "Seeking roles in AI adoption support, workflow automation, and generative AI enablement",
   },
   wantedly: "https://www.wantedly.com/id/ryuuuta6o",
   github: "https://github.com/ryuuuta6o/",
   portrait: "/sites/ryutaro/ryutaro-profile-resume.jpg",
 };
 
+export const careerInterests: Localized[] = [
+  { ja: "AI導入支援・業務自動化・生成AI活用支援", en: "AI adoption support, workflow automation, and generative AI enablement" },
+  { ja: "ソリューションエンジニア・業務システム導入支援", en: "Solutions engineering and business systems implementation support" },
+  { ja: "AI活用Webマーケティング・SEO／AIO・Webサイト／LP改善", en: "AI-assisted web marketing, SEO and AI search, and website and landing page improvement" },
+];
+
 export const copy = {
   ja: {
     nav: ["ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
     hire: "連絡する",
-    eyebrow: "AI × WEB MARKETING",
-    heroLine: "AIで仕組みをつくり、",
-    heroAccent: "Webの集客を改善する。",
+    eyebrow: "FIELD EXPERIENCE × AI WORKFLOWS",
+    heroLine: "現場の課題を、",
+    heroAccent: "AIで使える仕組みに。",
     heroBody: [
-      ["顧客対応・現場業務・個人事業の運営経験を活かし、", "生成AIを用いたWebサイト・LP制作、", "SEOを意識した情報設計、", "問い合わせ導線の改善に取り組んでいます。"],
-      ["企画・制作から動作確認、運用改善まで、", "実際に使う人の視点で進めています。"],
+      ["住宅設備サービスの個人事業を運営し、", "顧客の声や現場の業務から課題を整理。"],
+      ["業務フローと要件をまとめ、", "生成AIを活用して仕組みを構築し、", "動作確認と運用改善を行っています。"],
     ],
     heroPrimary: "制作実績を見る",
     heroSecondary: "私について",
@@ -66,8 +73,9 @@ export const copy = {
     aboutTitle: "現場を知ることから、\nつくり始める。",
     aboutLead: "橘 龍太郎",
     aboutBody: [
-      "昇降機の保守・点検・修理を約7年、家電修理を約3年経験。2023年から住宅設備サービスの個人事業を運営し、顧客ヒアリング、現場確認、見積、発注、精算を担当しています。現場で受けた相談を、サービス内容・料金・対応地域の整理や、Webサイト・LPの情報設計に生かしています。",
-      "生成AIを活用してWebサイト・LPや業務システムを試作・構築し、画面の動作と相談までの導線を確認・改善しています。ChatGPT、Claude Code、Codexは要件整理や実装の支援に使用し、掲載内容・要件・画面の判断、動作確認、修正方針は本人が担っています。",
+      "昇降機の保守・点検・修理を約7年経験し、2023年から住宅設備サービスの個人事業を運営しています。家電修理やエアコン工事の現場でお客様の話を聞き、見積、発注、精算までの業務を担当してきました。",
+      "自社業務で使うシステムでは、業務フローや必要な機能を整理し、ChatGPT、Claude Code、OpenAI Codexを活用して構築しました。要件や画面、例外時の扱いを自分で判断し、動作確認と運用改善を行っています。",
+      "この経験を活かし、今後は顧客の業務を理解するところから、生成AIの活用や業務システムの導入、運用改善まで支援する仕事を志望しています。",
     ],
     aboutCards: [
       ["01", "現場の理解", "利用者の声と業務の流れから、解くべき課題を整理します。"],
@@ -77,17 +85,20 @@ export const copy = {
     ],
     skillsEyebrow: "02 / APPROACH",
     skillsTitle: ["制作から", "改善まで。"],
-    skillsBody: ["制作・設計の経験と、", "今後深めたいWeb集客の領域を", "分けて紹介します。"],
-    marketingFocus: [
-      ["取り組んだこと", "Webサイト・LPの情報設計、SEO・AIOのチェックリストに基づく自社サイトの点検・改善、LINE・フォームの導線整備。検索順位の計測画面と生成AI回答での事業名掲載も確認しました。"],
-      ["今後深めること", "テクニカルSEO、AIO・LLMO/GEOの継続観測、LPO・CRO、流入から問い合わせまでの効果測定を実務で深めたいと考えています。"],
+    skillsBody: ["顧客の声から業務を整理し、", "生成AIで試作・構築。", "使いながら改善します。"],
+    skillFocus: [
+      ["自社業務で実践したこと", "顧客ヒアリング、業務フロー・要件整理、AIを活用した構築、動作確認、例外を人が確認する運用、実案件での改善。"],
+      ["Web制作・集客改善", "Webサイト・LP制作、サービス情報や料金の整理、LINE・フォームへの導線整備。SEOの計測や、生成AIの回答への事業名掲載も確認しました。"],
     ],
+    interestsTitle: "希望する仕事",
+    preferenceLabel: ["第一希望", "第二希望", "第三希望"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "制作実績",
-    projectsBody: "自社サービスのサイト改善、LPと問い合わせ導線、業務アプリなど10作品を掲載しています。開発中の作品はその状態を明記しています。",
+    projectsBody: "自社で使う業務システムを中心に、AIの試作やWeb制作・集客改善を紹介します。",
     viewAll: "すべての10作品を見る",
     viewLess: "代表作品のみ表示",
-    viewDetails: "画面を拡大",
+    viewDetails: "作品詳細を見る",
+    featuredLabel: "代表実績",
     visit: "公開サイトを見る",
     close: "閉じる",
     nextImage: "別の画面を見る",
@@ -99,27 +110,27 @@ export const copy = {
       ["3", "実装に活用したAIツール"],
     ],
     contactEyebrow: "04 / CONTACT",
-    contactTitle: "Webの課題を、\n一緒に改善へ。",
-    contactBody: ["AIを活用したWeb制作、", "SEO・サイト改善に", "実行から検証まで携わる", "仕事を志望しています。", "WantedlyまたはGitHubから", "ご連絡ください。"],
+    contactTitle: "現場の業務を、\n使える仕組みへ。",
+    contactBody: ["AI導入支援・業務自動化を第一希望に、", "顧客の業務整理から構築・検証、", "導入後の改善まで携わりたいと考えています。", "WantedlyまたはGitHubからご連絡ください。"],
     contactPrimary: "Wantedlyで連絡",
     contactSecondary: "GitHubを見る",
-    footer: "橘 龍太郎 — 現場から、Webの改善へ。",
+    footer: "橘 龍太郎 — 現場から、業務の改善へ。",
     language: "English",
     motionOff: "動きをOFF",
     motionOn: "動きをON",
-    modalLabel: "作品の拡大表示",
+    modalLabel: "作品の詳細",
     noPublicLink: "公開リンクなし",
-    workNote: "自社サイトの改善を、検索データと実際の画面で紹介しています。作品詳細に比較期間・計測条件・本人の担当範囲を掲載しています。",
+    workNote: "作品詳細では、実運用・開発中・試作を区別し、本人の担当範囲と確認できた結果を紹介しています。",
   },
   en: {
     nav: ["ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
     hire: "Get in touch",
-    eyebrow: "AI × WEB MARKETING",
-    heroLine: "Build with AI.",
-    heroAccent: "Improve the web.",
+    eyebrow: "FIELD EXPERIENCE × AI WORKFLOWS",
+    heroLine: "From field problems",
+    heroAccent: "to practical AI workflows.",
     heroBody: [
-      ["I draw on customer service, field work, and running my own business to build websites and landing pages with AI assistance, structure SEO-conscious content, and improve paths to inquiry."],
-      ["I work from planning and production through functional checks and ongoing improvement, with the people using the site in mind."],
+      ["Running a residential equipment service business has taught me to listen to customers and identify problems in day-to-day work."],
+      ["I map workflows, define requirements, build with generative AI assistance, check how things work, and improve them in use."],
     ],
     heroPrimary: "Explore projects",
     heroSecondary: "About me",
@@ -128,8 +139,9 @@ export const copy = {
     aboutTitle: "Start with the people\nand the workflow.",
     aboutLead: "Ryutaro Tachibana",
     aboutBody: [
-      "I spent about seven years in elevator maintenance, inspection, and repair, followed by about three years in appliance repair. Since 2023, I have run a residential equipment service business, handling customer interviews, site checks, estimates, orders, and settlement. I use field questions to organize services, prices, service areas, and the information architecture of websites and landing pages.",
-      "I use generative AI to help prototype and build websites, landing pages, and business systems, then check the screens and paths to inquiry. ChatGPT, Claude Code, and Codex support requirements work and implementation; I make decisions about content, requirements, screens, functional checks, and revisions.",
+      "I spent about seven years in elevator maintenance, inspection, and repair. Since 2023, I have run a residential equipment service business. In appliance repair and air-conditioning work, I have handled customer conversations, estimates, orders, and settlement.",
+      "I mapped workflows and defined requirements for a system used in my own business. ChatGPT, Claude Code, and OpenAI Codex supported the build. I decided what the system needed, how to handle exceptions, and what to check and improve during use.",
+      "I want to bring this experience to a role helping customers understand their workflows, adopt AI or business systems, and improve how those systems are used.",
     ],
     aboutCards: [
       ["01", "Understand the field", "Listen to users and map the workflow before defining the problem."],
@@ -139,17 +151,20 @@ export const copy = {
     ],
     skillsEyebrow: "02 / APPROACH",
     skillsTitle: ["From build to improvement."],
-    skillsBody: ["I distinguish work shown in this portfolio from web-growth skills I plan to develop next."],
-    marketingFocus: [
-      ["Work completed", "Website and landing-page structure, checks and improvements to my own site guided by an SEO and AI-search checklist, and paths to LINE and contact forms. I also observed search-position displays and a mention of my business in an AI-generated answer."],
-      ["Areas to develop", "Deeper technical SEO, continued observation of AI search visibility (AIO/LLMO/GEO), landing-page and conversion optimization, and measurement from visits through inquiries."],
+    skillsBody: ["I listen to customers, map the work, build with AI assistance, and improve the result in use."],
+    skillFocus: [
+      ["Applied in my own business", "Customer interviews, workflow and requirements mapping, AI-assisted building, functional checks, human review of exceptions, and improvements based on real use."],
+      ["Web production and acquisition", "Websites, landing pages, service and pricing information, and paths to LINE and contact forms. I have also checked search data and business mentions in AI answers."],
     ],
+    interestsTitle: "Roles I am seeking",
+    preferenceLabel: ["First preference", "Second preference", "Third preference"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "Selected work",
-    projectsBody: "Ten projects spanning my own service site's improvements, landing pages and inquiry paths, and business applications. Work in progress is labelled as such.",
+    projectsBody: "A system used in my own business, followed by AI prototypes, web production, and search improvements.",
     viewAll: "View all 10 projects",
     viewLess: "Show featured projects",
-    viewDetails: "Expand screen",
+    viewDetails: "View project details",
+    featuredLabel: "Featured case study",
     visit: "Visit live site",
     close: "Close",
     nextImage: "View another screen",
@@ -161,17 +176,17 @@ export const copy = {
       ["3", "AI tools used in implementation"],
     ],
     contactEyebrow: "04 / CONTACT",
-    contactTitle: "Let's make the web\nwork better.",
-    contactBody: ["I am seeking hands-on roles in AI-assisted web production, SEO, and site improvement, from implementation through evaluation. Connect with me on Wantedly or GitHub."],
+    contactTitle: "Make day-to-day work\nrun better.",
+    contactBody: ["My first preference is AI adoption support and workflow automation. I want to help customers map their work, build and verify practical systems, and improve them after rollout. Connect with me on Wantedly or GitHub."],
     contactPrimary: "Connect on Wantedly",
     contactSecondary: "View GitHub",
-    footer: "Ryutaro Tachibana — from field insight to better websites.",
+    footer: "Ryutaro Tachibana — from field insight to better workflows.",
     language: "日本語",
     motionOff: "Reduce motion",
     motionOn: "Enable motion",
-    modalLabel: "Expanded project screen",
+    modalLabel: "Project details",
     noPublicLink: "No public link",
-    workNote: "Search data and actual screens document improvements to my own business website. The project details include comparison periods, measurement conditions, and my role.",
+    workNote: "Project details distinguish systems in use from work in development and prototypes, and describe my role and the results I could verify.",
   },
 } as const;
 
@@ -186,7 +201,7 @@ export const skills = [
   {
     number: "02",
     title: { ja: "形を決める", en: "Define" },
-    body: { ja: "必要な情報、画面、導線を選び、要件を判断。", en: "Decide on information, screens, and flow." },
+    body: { ja: "受付から精算までの流れを整理し、必要な情報、画面、業務ルールを決める。", en: "Map intake through settlement and decide what information, screens, and rules the work needs." },
     tags: [{ ja: "要件整理", en: "Requirements" }, { ja: "画面設計", en: "Screen design" }, { ja: "導線設計", en: "User flow" }],
     theme: "blue",
   },
@@ -194,13 +209,13 @@ export const skills = [
     number: "03",
     title: { ja: "AIとつくる", en: "Build with AI" },
     body: { ja: "生成AIを実装の支援に使い、動く成果物へ。", en: "Use AI assistance to make working deliverables." },
-    tags: [{ ja: "ChatGPT", en: "ChatGPT" }, { ja: "Claude Code", en: "Claude Code" }, { ja: "Codex", en: "Codex" }],
+    tags: [{ ja: "ChatGPT", en: "ChatGPT" }, { ja: "Claude Code", en: "Claude Code" }, { ja: "OpenAI Codex", en: "OpenAI Codex" }],
     theme: "violet",
   },
   {
     number: "04",
     title: { ja: "確かめ、改善する", en: "Verify and refine" },
-    body: { ja: "実画面と操作を確認し、使いやすさを改善。", en: "Check real screens and interactions, then improve usability." },
+    body: { ja: "操作や計算の結果を確認し、人が判断する例外を残しながら運用を改善。", en: "Check interactions and calculation results, keep human review for exceptions, and refine the workflow in use." },
     tags: [{ ja: "動作確認", en: "Functional checks" }, { ja: "修正", en: "Revisions" }, { ja: "運用改善", en: "Workflow improvement" }],
     theme: "green",
   },
@@ -236,7 +251,8 @@ const projectEntries: Project[] = [
   {
     id: "ai-lp-audit", number: "03",
     title: { ja: "AI LP Audit", en: "AI LP Audit" },
-    category: { ja: "分析ツール", en: "Analysis tool" },
+    category: { ja: "分析ツール・試作", en: "Analysis tool · prototype" },
+    status: { ja: "試作", en: "Prototype" },
     summary: { ja: "ランディングページの確認項目を画面で整理するツール。", en: "A tool for reviewing landing-page factors in one interface." },
     detail: { ja: "画面では評価項目と改善案を確認できます。現時点で確認できた挙動は、JSONデータの読み込みとルールに基づく表示です。URLからの自動クロールや生成AIによる実分析は確認できていません。", en: "The interface displays review criteria and suggestions. The verified behavior is JSON import and rule-based display. Automatic URL crawling and live generative-AI analysis have not been verified." },
     image: "/sites/ryutaro/ai-lp-audit.webp",
@@ -246,24 +262,57 @@ const projectEntries: Project[] = [
   },
   {
     id: "settlement", number: "04",
-    title: { ja: "受付・見積・発注・精算システム", en: "Intake, Estimate, Order & Settlement System" },
-    category: { ja: "業務アプリ", en: "Business application" },
-    summary: { ja: "受付から精算までの情報をひとつの流れで扱う業務画面。", en: "A business interface that follows the work from intake through settlement." },
-    detail: { ja: "自身の個人事業で、分散していた受付・見積・発注・手数料精算の情報を一元管理するために制作。ヒアリング、要件整理、画面検討、生成AIのコーディング支援を使った構築、検証・運用改善を担当しました。例外的な料金計算は自動確定せず、人が根拠を確認できる運用にしています。職務経歴書には実運用3か月、月平均約50件で使用と記載しています。", en: "Built for my own business to bring scattered intake, estimates, orders, and fee settlement into one workflow. I handled requirements, screen decisions, testing, and operational improvements, using AI-assisted coding for the build. Exceptional fee calculations require a human check rather than automatic approval. My career history records three months of use at about 50 cases per month on average." },
-    image: "/sites/ryutaro/settlement-app.webp",
-    alt: { ja: "受付・見積・発注・精算システムの実際の管理画面", en: "Actual management screen of the intake, estimate, order, and settlement system" },
-    tags: [{ ja: "業務設計", en: "Workflow design" }, { ja: "管理画面", en: "Admin interface" }, { ja: "AI活用", en: "AI-assisted build" }],
-    badge: { ja: "実際の管理画面", en: "Actual interface" },
+    featured: true,
+    title: { ja: "案件受付・見積・協力会社への発注・精算を管理する業務システム", en: "Business System for Intake, Estimates, Partner Orders, and Settlement" },
+    cardTitle: { ja: "案件受付・見積・発注・精算システム", en: "Intake, Estimate, Order & Settlement System" },
+    dialogSubtitle: { ja: "自社業務の受付から協力会社への発注・精算まで", en: "From case intake to partner orders and settlement in my own business" },
+    category: { ja: "自社業務・実運用", en: "Own business · in use" },
+    summary: { ja: "受付から協力会社への発注・精算までをひとつの流れで管理。2026年10月時点で実運用3か月、月平均約50件に使用しました。", en: "One workflow from intake through partner orders and settlement. As of October 2026: three months in use, averaging about 50 cases per month." },
+    detail: { ja: "住宅設備サービスの自社業務で使っている管理システムです。受付から見積、協力会社への発注、手数料・紹介料の精算までを扱います。", en: "A system used in my own residential equipment service business. It covers intake, estimates, orders to partner contractors, and settlement of service and referral fees." },
+    image: "/sites/ryutaro/settlement-workflow.svg",
+    alt: { ja: "案件受付、見積、協力会社への発注、精算の順につながる業務フロー図", en: "Workflow diagram: intake, estimate, partner order, and settlement" },
+    tags: [{ ja: "業務設計", en: "Workflow design" }, { ja: "AI活用", en: "AI-assisted build" }, { ja: "人による確認", en: "Human review" }],
+    badge: { ja: "業務フロー図", en: "Workflow diagram" },
+    status: { ja: "自社業務で実運用", en: "In use in my own business" },
+    caseStudy: {
+      sections: [
+        {
+          heading: { ja: "01　業務上の課題", en: "01 · The business problem" },
+          body: { ja: "受付・見積・発注・精算の情報が分散し、口頭のやり取りや手計算に頼る部分がありました。案件ごとに情報と判断の根拠を確認できるようにすることが課題でした。", en: "Intake, estimates, orders, and settlement information were scattered, with some steps relying on verbal exchanges and manual calculations. I needed to see the information and basis for decisions together for each case." },
+        },
+        {
+          heading: { ja: "02　業務フローと必要な機能", en: "02 · Workflow and requirements" },
+          body: { ja: "案件受付、見積、協力会社への発注、手数料・紹介料の按分精算の順に業務を整理。各工程で必要な情報と、人が確認する判断を分けました。", en: "I mapped intake, estimation, partner orders, and the allocation of service and referral fees, separating information needed at each step from decisions that require human review." },
+        },
+        {
+          heading: { ja: "03　構築した仕組み", en: "03 · What I built" },
+          body: { ja: "Next.js、TypeScript、Supabaseなどを使用。受付から精算までを案件単位で管理し、発注や精算に必要な情報をひとつの流れで確認できるようにしました。", en: "Built with Next.js, TypeScript, and Supabase. The system organizes work by case and keeps the information needed for partner orders and settlement in one workflow." },
+        },
+        {
+          heading: { ja: "04　本人の担当とAIの活用", en: "04 · My role and AI assistance" },
+          body: { ja: "業務フロー・要件の整理、画面や料金ルールの判断、動作確認、運用改善を担当しました。生成AIは、整理した要件を画面やコードに落とし込む構築作業の支援に使いました。", en: "I mapped the workflow, defined requirements, decided on screens and pricing rules, checked behavior, and refined operations. Generative AI assisted with translating those requirements into screens and code." },
+        },
+        {
+          heading: { ja: "05　動作確認と運用上の工夫", en: "05 · Checks and operating safeguards" },
+          body: { ja: "案件の流れや精算の表示を確認し、実務に合わせて改善。例外的な料金計算は自動確定させず、人が根拠を確認して判断する運用にしています。", en: "I checked the case workflow and settlement display, then refined them during use. Exceptional fee calculations are held for human review of the basis before any final decision." },
+        },
+        {
+          heading: { ja: "06　確認できる運用実績", en: "06 · Recorded use" },
+          body: { ja: "2026年10月時点で自社業務に3か月間使用し、月平均約50件の案件を扱いました。", en: "As of October 2026, the system had been used in my own business for three months, averaging about 50 cases per month." },
+        },
+      ],
+      evidence: [],
+    },
   },
   {
     id: "photo-estimate", number: "05",
-    title: { ja: "写真見積もりエージェント", en: "Photo Estimate Agent" },
+    title: { ja: "写真ベースのAI概算見積もり支援", en: "AI-Assisted Estimates from Photos" },
     category: { ja: "AIアプリ・開発中", en: "AI application · in development" },
     summary: { ja: "写真を起点に見積もりの検討を進めるアプリの試作画面。", en: "A prototype interface for starting an estimate from photos." },
     detail: { ja: "開発中の作品です。写真と施工条件から追加確認事項や工事上のリスクを整理する流れを設計しています。AIの解釈と料金ルールを分け、判断が難しい場合は人が確認する方針です。掲載画像はデモデータを含み、機能の実装範囲と精度は未確認です。", en: "A work in progress that structures additional questions and installation risks from photos and job conditions. The design separates AI interpretation from pricing rules and sends difficult cases to a person for review. The screen includes demo data; implemented scope and accuracy remain unverified." },
     image: "/sites/ryutaro/photo-estimate-agent-cover.webp",
     fullImage: "/sites/ryutaro/photo-estimate-agent-full.jpg",
-    alt: { ja: "写真見積もりエージェントのデモ画面", en: "Demonstration screen of the Photo Estimate Agent" },
+    alt: { ja: "写真ベースのAI概算見積もり支援のデモ画面", en: "Demo screen for AI-assisted estimates from photos" },
     tags: [{ ja: "試作", en: "Prototype" }, { ja: "写真", en: "Photos" }, { ja: "AI活用", en: "AI-assisted build" }],
     badge: { ja: "デモ画面", en: "Demo screen" },
     status: { ja: "開発中・デモ画面", en: "In development · demo screen" },
@@ -311,6 +360,10 @@ const projectEntries: Project[] = [
         {
           heading: { ja: "確認できた結果", en: "Observed results" },
           body: { ja: "改善の取り組みを続ける中で、各28日間の比較では検索クリックが19→38、表示回数が840→1,750に増加。地域・症状別の検索順位にも改善が見られ、生成AIの回答内で事業名の掲載も確認しました。比較期間と途中経過は下のレポートにまとめています。", en: "During ongoing improvement work, comparable 28-day records showed search clicks rising from 19 to 38 and impressions from 840 to 1,750. Some local symptom-related queries improved in rank, and an AI-generated answer mentioned the business. The report below gives the periods and intermediate results." },
+        },
+        {
+          heading: { ja: "ChatGPTの回答での掲載確認", en: "Business mentions in ChatGPT answers" },
+          body: { ja: "2026年10月24日に保存した限定10回答のうち、7回答で自社名の紹介を確認しました。この記録は当時の回答の観測であり、一般的な紹介率やGoogle AI Overviewの掲載実績を示すものではありません。", en: "The business was mentioned in 7 of 10 selected ChatGPT answers saved on October 24, 2026. This is a record of those answers, not a general mention rate or a result from Google AI Overviews." },
         },
         {
           heading: { ja: "今後の改善", en: "Next steps" },
@@ -378,8 +431,8 @@ const projectEntries: Project[] = [
 ];
 
 const projectOrder = [
-  "ouchi", "aircon-lp", "kyn", "ai-lp-audit", "electric-lp",
-  "settlement", "photo-estimate", "macro", "banner", "line-menu",
+  "settlement", "photo-estimate", "ai-lp-audit", "ouchi", "aircon-lp",
+  "kyn", "electric-lp", "macro", "banner", "line-menu",
 ];
 
 export const projects: Project[] = projectOrder.map((id, index) => {

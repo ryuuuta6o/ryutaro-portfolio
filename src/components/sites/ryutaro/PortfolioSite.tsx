@@ -17,7 +17,7 @@ import {
 import { MotionBackdrop } from "./MotionBackdrop";
 import { SeoProgressReport } from "./SeoProgressReport";
 import { useSiteMotion } from "./useSiteMotion";
-import { copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
+import { careerInterests, copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
 
 const anchors = ["about", "skills", "projects", "contact"] as const;
 
@@ -40,7 +40,7 @@ function ProjectCard({
 }) {
   const t = copy[locale];
   return (
-    <article className="project-card reveal" data-motion-index={index}>
+    <article className={`project-card reveal${project.featured ? " featured-project" : ""}`} data-motion-index={index}>
       <div className="project-media">
         <img src={project.image} alt={project.alt[locale]} loading="lazy" />
         <button
@@ -72,14 +72,22 @@ function ProjectCard({
         </div>
         <span className="project-image-badge">{project.badge[locale]}</span>
       </div>
-      <div className="project-label-row">
-        <span className="project-category">{project.category[locale]}</span>
-        <span className="project-number">/ {project.number}</span>
-      </div>
-      <h3>{project.cardTitle?.[locale] ?? project.title[locale]}</h3>
-      <p className="project-summary">{project.summary[locale]}</p>
-      <div className="tag-row">
-        {project.tags.map((tag) => <span className="tag" key={tag.ja}>{tag[locale]}</span>)}
+      <div className="project-card-copy">
+        {project.featured && <span className="section-kicker">{t.featuredLabel}</span>}
+        <div className="project-label-row">
+          <span className="project-category">{project.category[locale]}</span>
+          <span className="project-number">/ {project.number}</span>
+        </div>
+        <h3>{project.cardTitle?.[locale] ?? project.title[locale]}</h3>
+        <p className="project-summary">{project.summary[locale]}</p>
+        <div className="tag-row">
+          {project.tags.map((tag) => <span className="tag" key={tag.ja}>{tag[locale]}</span>)}
+        </div>
+        {project.featured && (
+          <button className="outline-action featured-project-action" type="button" onClick={(event) => onExpand(project, event.currentTarget)}>
+            {t.viewDetails} <ArrowRight size={16} />
+          </button>
+        )}
       </div>
     </article>
   );
@@ -153,6 +161,11 @@ function ProjectDialog({
     }
   }, [zoomEvidence]);
   const source = alternate && project.alternateImage ? project.alternateImage : project.fullImage || project.image;
+  const projectImage = (
+    <div className={"dialog-image" + (project.longImage ? " long-image" : "") + (project.featured ? " workflow-illustration" : "")}>
+      <img src={source} alt={alternate ? project.title[locale] + " — 2" : project.alt[locale]} />
+    </div>
+  );
   return (
     <div className="dialog-backdrop" onPointerDown={(event) => {
       if (event.target === event.currentTarget) onClose();
@@ -178,9 +191,7 @@ function ProjectDialog({
             </div>
           ) : (
           <>
-          <div className={"dialog-image" + (project.longImage ? " long-image" : "")}>
-            <img src={source} alt={alternate ? project.title[locale] + " — 2" : project.alt[locale]} />
-          </div>
+          {!project.featured && projectImage}
           <div className="dialog-copy">
             <div>
               <h2>{project.dialogSubtitle ? <>{project.cardTitle?.[locale]}<span className="dialog-title-subtitle">{project.dialogSubtitle[locale]}</span></> : project.title[locale]}</h2>
@@ -212,6 +223,7 @@ function ProjectDialog({
               )}
             </div>
           </div>
+          {project.featured && projectImage}
           {project.caseStudy && (
             <div className="case-study">
               <div className="case-study-sections">
@@ -223,7 +235,7 @@ function ProjectDialog({
                 ))}
               </div>
               {project.caseStudy.report === "ouchi-seo" && <SeoProgressReport locale={locale} />}
-              <div className="case-study-evidence">
+              {project.caseStudy.evidence.length > 0 && <div className="case-study-evidence">
                 {project.caseStudy.evidence.map((evidence) => (
                   <figure className="evidence-card" key={evidence.kind}>
                     <h3>{evidence.title[locale]}</h3>
@@ -241,7 +253,7 @@ function ProjectDialog({
                     </div>
                   </figure>
                 ))}
-              </div>
+              </div>}
             </div>
           )}
           </>
@@ -457,6 +469,14 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
                 <div><strong>{t.aboutLead}</strong><p className="about-role"><RoleText locale={locale} /></p></div>
               </div>
               <div className="about-body">{t.aboutBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
+              <section className="career-preferences" aria-labelledby="career-preferences-title">
+                <h3 id="career-preferences-title">{t.interestsTitle}</h3>
+                <ol>
+                  {careerInterests.map((interest, index) => (
+                    <li key={interest.ja}><span>{t.preferenceLabel[index]}</span>{interest[locale]}</li>
+                  ))}
+                </ol>
+              </section>
             </div>
             <div className="about-card-grid">
               {t.aboutCards.map(([number, title, body], index) => (
@@ -491,7 +511,7 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
               ))}
             </div>
             <div className="marketing-focus reveal">
-              {t.marketingFocus.map(([label, body]) => (
+              {t.skillFocus.map(([label, body]) => (
                 <div className="marketing-focus-item" key={label}>
                   <h3>{label}</h3>
                   <p>{body}</p>
@@ -510,9 +530,10 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
                   {showAll ? t.viewLess : t.viewAll} <ArrowRight size={18} />
                 </button>
               </div>
+              <p>{t.projectsBody}</p>
             </div>
             <div className="project-grid">
-              {(showAll ? projects : projects.slice(0, 4)).map((project, index) => (
+              {(showAll ? projects : projects.slice(0, 5)).map((project, index) => (
                 <ProjectCard key={project.id} index={index} project={project} locale={locale} onExpand={openProject} />
               ))}
             </div>
