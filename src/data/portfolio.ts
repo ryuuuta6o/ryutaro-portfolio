@@ -234,12 +234,12 @@ const projectEntries: Project[] = [
     "en": "Workflow automation · confidential"
   },
   "summary": {
-    "ja": "在庫管理から印刷連携、仕入先への自動FAX送信、通知までをつなぐ仕組み。",
-    "en": "A workflow connecting inventory management, printing, automatic fax orders to suppliers, and notifications."
+    "ja": "在庫管理とプリンターを連携し、在庫不足や再発注のタイミングを自動で知らせる仕組み。",
+    "en": "An inventory workflow with printing integration and automatic low-stock and reorder alerts."
   },
   "detail": {
-    "ja": "病院向けの在庫管理に、印刷連携、仕入先への自動FAX送信、通知を組み合わせました。制作時間は約6時間です。守秘のため、医療機関名・利用者情報・画面・接続先は掲載していません。効果の数値や本番稼働状況はここでは示していません。",
-    "en": "Built an inventory workflow with printing integration, automatic fax sending to suppliers, and notifications. Build time was approximately six hours. Institution names, user information, screens, and connection details are withheld for confidentiality. No quantified outcomes or production-operation claims are made here."
+    "ja": "病院向けに、在庫管理とプリンターの連携、在庫不足や再発注のタイミングの通知、メール・メッセージの自動送信、AI連携を組み込んだ業務システムを制作しました。制作期間は約6か月です。守秘のため、医療機関名・画像・利用者情報は掲載していません。",
+    "en": "Built a hospital inventory system with printer integration, alerts for low stock and reorder timing, automated emails and messages, and AI integration. Development took approximately six months. The institution name, images, and user information are withheld for confidentiality."
   },
   "image": "",
   "alt": {
@@ -252,12 +252,16 @@ const projectEntries: Project[] = [
       "en": "Inventory"
     },
     {
-      "ja": "印刷・FAX連携",
-      "en": "Print & fax"
+      "ja": "プリンター連携",
+      "en": "Printer integration"
     },
     {
-      "ja": "通知",
-      "en": "Notifications"
+      "ja": "自動通知",
+      "en": "Automated alerts"
+    },
+    {
+      "ja": "AI連携",
+      "en": "AI integration"
     }
   ],
   "badge": {
@@ -265,8 +269,8 @@ const projectEntries: Project[] = [
     "en": "Images withheld"
   },
   "status": {
-    "ja": "非公開・制作約6時間",
-    "en": "Confidential · approx. 6 hours"
+    "ja": "非公開・制作約6か月",
+    "en": "Confidential · approx. 6 months"
   }
 },
 {
@@ -288,10 +292,10 @@ const projectEntries: Project[] = [
     "ja": "Windows向けに制作した個人用ツールです。画面全体・ウィンドウ・範囲を選んで録画し、PC音声とマイクを別トラックで保存してMP4へまとめる構成。録画中のマーカー、一覧、切り出しにも対応しています。制作約2か月・サポート込み約3か月。顧客向けの保守契約や第三者への納品実績を示すものではありません。録画前には参加者への通知や各サービスの規約を確認します。",
     "en": "A Windows tool built for personal use. It supports full-screen, window, and region capture, separate system-audio and microphone tracks, MP4 mixing, markers, recording lists, and trimming. Approximately two months to develop and three months including support. This personal project is not presented as a client maintenance contract or delivery. Participant notice and service terms should be checked before recording."
   },
-  "image": "/sites/ryutaro/meeting-recorder-flow.svg",
+  "image": "/sites/ryutaro/meeting-recorder-ui.jpg",
   "alt": {
-    "ja": "画面、PC音声、マイクからMP4を作る機能説明図。実画面ではありません。",
-    "en": "Functional diagram showing screen, system audio, and microphone combined into MP4. Not an actual screenshot."
+    "ja": "録画待機中の実画面。画面の選択、PC音声、マイク、録画設定が表示されている。",
+    "en": "Actual idle recorder screen showing screen selection, system audio, microphone, and recording settings."
   },
   "tags": [
     {
@@ -308,8 +312,8 @@ const projectEntries: Project[] = [
     }
   ],
   "badge": {
-    "ja": "機能説明図",
-    "en": "Functional diagram"
+    "ja": "録画ツールの実画面",
+    "en": "Actual recorder screen"
   },
   "status": {
     "ja": "個人用ツール・ソース非公開",
@@ -328,17 +332,17 @@ const projectEntries: Project[] = [
     "en": "Booking interface · demo"
   },
   "summary": {
-    "ja": "ホテル予約システムの提案用に制作したデモ。実案件の本番運用とは区別して紹介します。",
-    "en": "A hotel booking system demo created to present a proposal, distinct from a production client system."
+    "ja": "予約一覧・空室・料金を確認できる管理画面と、宿泊者向けの予約画面を制作。",
+    "en": "Built the management dashboard for bookings, availability, and rates, and a separate booking screen for guests."
   },
   "detail": {
-    "ja": "ホテル予約システムを想定したデモ制作です。実受注・納品・本番運用の実績としては記載していません。リンク先は現在ChatGPTへのログインを求めるため、誰でも閲覧できる公開デモではありません。掲載画像は作品の用途を伝える説明イラストであり、実画面ではありません。開発開始日や制作期間は未確定のため記載していません。",
-    "en": "A demo exploring a hotel booking system. It is not presented as a commissioned delivery or a system running in production. The linked site currently requires ChatGPT sign-in and is not anonymously accessible. The image is an explanatory illustration, not a screenshot. Development dates and duration are not stated because they have not been confirmed."
+    "ja": "ホテル予約管理システムのデモを制作しました。管理側はダッシュボード、予約一覧、空室・料金の確認、ホテル切り替えに対応。宿泊者向け予約画面も用意しています。参考画面は架空データを表示した実際のデモ画面です。サイトを見るにはChatGPTログインが必要です。",
+    "en": "Built a hotel booking management demo. It includes a dashboard, a reservation list, availability and rates, switching between hotels, and a separate guest booking screen. The reference image shows the actual interface with fictional data. ChatGPT sign-in is required to view the demo."
   },
-  "image": "/sites/ryutaro/hotel-demo-illustration.svg",
+  "image": "/sites/ryutaro/staynote-dashboard.jpg",
   "alt": {
-    "ja": "ホテル予約デモを表す説明イラスト。実画面ではありません。",
-    "en": "Explanatory illustration for the hotel booking demo, not an actual screenshot."
+    "ja": "架空のホテルデータを使ったStayNoteのダッシュボード参考画面。",
+    "en": "Reference screenshot of the StayNote dashboard using fictional hotel data."
   },
   "tags": [
     {
@@ -346,13 +350,13 @@ const projectEntries: Project[] = [
       "en": "Booking UI"
     },
     {
-      "ja": "提案用デモ",
-      "en": "Proposal demo"
+      "ja": "管理画面",
+      "en": "Admin dashboard"
     }
   ],
   "badge": {
-    "ja": "説明イラスト",
-    "en": "Explanatory illustration"
+    "ja": "参考画面",
+    "en": "Reference screenshot"
   },
   "href": "https://staynote-hotel-demo-ryu.ryuuuta6o.chatgpt.site/",
   "status": {
@@ -512,8 +516,8 @@ const projectEntries: Project[] = [
         "en": "Scope and interpretation"
       },
       "body": {
-        "ja": "出典：Google Search Console（2026/11/20取得の確定データ）。Web検索、同一ドメインのプロパティ、全ての国・端末、太平洋時間の各28日間で比較。通常のWeb検索の集計であり、AI検索での掲載実績ではありません。施策単独の効果、問い合わせ数、売上の増加を証明するものではありません。",
-        "en": "Source: Google Search Console finalized data retrieved November 20, 2026. Web search, the same domain property, all countries and devices, two 28-day periods in Pacific Time. These are standard web-search metrics, not AI-search visibility results. They do not establish causation from individual changes or prove increased inquiries or revenue."
+        "ja": "出典：Google Search Console（2026/11/20取得の確定データ）。Web検索、同一ドメインのプロパティ、全ての国・端末、各28日間で比較。通常のWeb検索の集計であり、AI検索での掲載実績ではありません。施策単独の効果、問い合わせ数、売上の増加を証明するものではありません。",
+        "en": "Source: Google Search Console finalized data retrieved November 20, 2026. Web search, the same domain property, all countries and devices, two 28-day periods. These are standard web-search metrics, not AI-search visibility results. They do not establish causation from individual changes or prove increased inquiries or revenue."
       }
     }
   ],
