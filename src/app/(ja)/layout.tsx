@@ -7,8 +7,10 @@ const body = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryutaro-portfolio-orpin.vercel.app"),
-  title: "橘 龍太郎 | AI導入支援・業務自動化を志望",
-  description: "橘 龍太郎のポートフォリオ。住宅設備サービスの現場経験を活かし、顧客ヒアリング、業務・要件整理、生成AIを用いた構築、検証、運用改善に取り組む。自社業務で実運用する受付・見積・発注・精算システムを紹介。",
+  title: "R.T. | AI導入支援・業務自動化を志望",
+  description: "R.T.のポートフォリオ。生成AIを活用した業務改善・開発に取り組み、顧客ヒアリング、業務・要件整理、生成AIを用いた構築、検証、運用改善に取り組む。実務用の業務システム、個人制作ツール、予約デモを紹介。",
+  openGraph: { title: "R.T. | AI導入支援・業務自動化を志望", siteName: "R.T. Portfolio", type: "website" },
+  twitter: { card: "summary", title: "R.T. | AI導入支援・業務自動化を志望" },
   alternates: { canonical: "/", languages: { ja: "/", en: "/en/", "x-default": "/" } },
   robots: { index: true, follow: true },
 };

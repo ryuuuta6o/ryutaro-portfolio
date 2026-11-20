@@ -7,8 +7,10 @@ const body = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryutaro-portfolio-orpin.vercel.app"),
-  title: "Ryutaro Tachibana | AI Adoption Support & Workflow Automation",
-  description: "Ryutaro Tachibana seeks roles in AI adoption and workflow automation. Explore how customer interviews, workflow and requirements mapping, AI-assisted building, and verification shaped a system used in his own residential equipment service business.",
+  title: "R.T. | AI Adoption Support & Workflow Automation",
+  description: "R.T. seeks roles in AI adoption and workflow automation. Explore how customer interviews, workflow and requirements mapping, AI-assisted building, and verification shaped practical workflow systems, tools, and booking demos.",
+  openGraph: { title: "R.T. | AI Adoption Support & Workflow Automation", siteName: "R.T. Portfolio", type: "website" },
+  twitter: { card: "summary", title: "R.T. | AI Adoption Support & Workflow Automation" },
   alternates: { canonical: "/en/", languages: { ja: "/", en: "/en/", "x-default": "/" } },
   robots: { index: true, follow: true },
 };

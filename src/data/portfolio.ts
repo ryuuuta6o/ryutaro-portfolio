@@ -39,7 +39,7 @@ export type Project = {
 };
 
 export const identity = {
-  name: { ja: "橘 龍太郎", en: "Ryutaro Tachibana" },
+  name: { ja: "R.T.", en: "R.T." },
   roles: {
     ja: "AI導入支援・業務自動化・生成AI活用支援を志望",
     en: "Seeking roles in AI adoption support, workflow automation, and generative AI enablement",
@@ -63,7 +63,7 @@ export const copy = {
     heroLine: "現場の課題を、",
     heroAccent: "AIで使える仕組みに。",
     heroBody: [
-      ["住宅設備サービスの個人事業を運営し、", "顧客の声や現場の業務から課題を整理。"],
+      ["生成AIを活用した業務改善・開発に取り組み、", "顧客の声や業務の流れから課題を整理。"],
       ["業務フローと要件をまとめ、", "生成AIを活用して仕組みを構築し、", "動作確認と運用改善を行っています。"],
     ],
     heroPrimary: "制作実績を見る",
@@ -71,11 +71,11 @@ export const copy = {
     scroll: "SCROLL TO EXPLORE",
     aboutEyebrow: "01 / ABOUT",
     aboutTitle: "現場を知ることから、\nつくり始める。",
-    aboutLead: "橘 龍太郎",
+    aboutLead: "R.T.",
     aboutBody: [
-      "昇降機の保守・点検・修理を約7年経験し、2023年から住宅設備サービスの個人事業を運営しています。家電修理やエアコン工事の現場でお客様の話を聞き、見積、発注、精算までの業務を担当してきました。",
-      "自社業務で使うシステムでは、業務フローや必要な機能を整理し、ChatGPT、Claude Code、OpenAI Codexを活用して構築しました。要件や画面、例外時の扱いを自分で判断し、動作確認と運用改善を行っています。",
-      "この経験を活かし、今後は顧客の業務を理解するところから、生成AIの活用や業務システムの導入、運用改善まで支援する仕事を志望しています。",
+      "生成AIを活用した業務改善・Webアプリ開発に取り組んでいます。利用者へのヒアリングから業務整理、要件の判断、構築、動作確認まで、使える仕組みにすることを大切にしています。",
+      "同業の方から個別に依頼を受けたWebアプリやWebサイトの制作にも取り組んでいます。自分の実務で使うシステムでは、業務フローや必要な機能を整理し、ChatGPT、Claude Code、OpenAI Codexを活用して構築しました。要件や画面、例外時の扱いを自分で判断し、動作確認と運用改善を行っています。",
+      "今後は生成AIを活用した開発・業務改善を仕事の中心に据えたいと考えています。背景には約7年間の昇降機保守と、2023年からの家電修理業務委託で培った、ヒアリング・原因分析・確認・説明の経験があります。",
     ],
     aboutCards: [
       ["01", "現場の理解", "利用者の声と業務の流れから、解くべき課題を整理します。"],
@@ -87,26 +87,26 @@ export const copy = {
     skillsTitle: ["制作から", "改善まで。"],
     skillsBody: ["顧客の声から業務を整理し、", "生成AIで試作・構築。", "使いながら改善します。"],
     skillFocus: [
-      ["自社業務で実践したこと", "顧客ヒアリング、業務フロー・要件整理、AIを活用した構築、動作確認、例外を人が確認する運用、実案件での改善。"],
-      ["Web制作・集客改善", "Webサイト・LP制作、サービス情報や料金の整理、LINE・フォームへの導線整備。SEOの計測や、生成AIの回答への事業名掲載も確認しました。"],
+      ["自分の実務で実践したこと", "顧客ヒアリング、業務フロー・要件整理、AIを活用した構築、動作確認、例外を人が確認する運用、実案件での改善。"],
+      ["Web制作・集客改善", "Webサイト・LP制作、サービス情報や料金の整理、LINE・フォームへの導線整備。SNS運用、SEO記事の執筆・公開、Googleビジネスプロフィールへの投稿、AIOの情報整備。"],
     ],
     interestsTitle: "希望する仕事",
     preferenceLabel: ["第一希望", "第二希望", "第三希望"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "制作実績",
-    projectsBody: "自社で使う業務システムを中心に、AIの試作やWeb制作・集客改善を紹介します。",
-    viewAll: "すべての10作品を見る",
+    projectsBody: "実務用の仕組み、個人制作ツール、ホテル予約のデモ、Web制作・集客改善を紹介します。各作品の用途と公開状態を分けて記載しています。",
+    viewAll: "すべての11作品を見る",
     viewLess: "代表作品のみ表示",
     viewDetails: "作品詳細を見る",
     featuredLabel: "代表実績",
-    visit: "公開サイトを見る",
+    visit: "サイトを見る",
     close: "閉じる",
     nextImage: "別の画面を見る",
     statsEyebrow: "AT A GLANCE",
     stats: [
-      ["10", "掲載作品"],
+      ["11", "掲載作品"],
       ["2", "表示言語"],
-      ["5", "公開リンクを掲載"],
+      ["6", "作品リンクを掲載"],
       ["3", "実装に活用したAIツール"],
     ],
     contactEyebrow: "04 / CONTACT",
@@ -114,7 +114,7 @@ export const copy = {
     contactBody: ["AI導入支援・業務自動化を第一希望に、", "顧客の業務整理から構築・検証、", "導入後の改善まで携わりたいと考えています。", "WantedlyまたはGitHubからご連絡ください。"],
     contactPrimary: "Wantedlyで連絡",
     contactSecondary: "GitHubを見る",
-    footer: "橘 龍太郎 — 現場から、業務の改善へ。",
+    footer: "R.T. — 現場から、業務の改善へ。",
     language: "English",
     motionOff: "動きをOFF",
     motionOn: "動きをON",
@@ -129,7 +129,7 @@ export const copy = {
     heroLine: "From field problems",
     heroAccent: "to practical AI workflows.",
     heroBody: [
-      ["Running a residential equipment service business has taught me to listen to customers and identify problems in day-to-day work."],
+      ["I use generative AI to develop practical tools and improve workflows, starting with customer needs and how work gets done."],
       ["I map workflows, define requirements, build with generative AI assistance, check how things work, and improve them in use."],
     ],
     heroPrimary: "Explore projects",
@@ -137,11 +137,11 @@ export const copy = {
     scroll: "SCROLL TO EXPLORE",
     aboutEyebrow: "01 / ABOUT",
     aboutTitle: "Start with the people\nand the workflow.",
-    aboutLead: "Ryutaro Tachibana",
+    aboutLead: "R.T.",
     aboutBody: [
-      "I spent about seven years in elevator maintenance, inspection, and repair. Since 2023, I have run a residential equipment service business. In appliance repair and air-conditioning work, I have handled customer conversations, estimates, orders, and settlement.",
-      "I mapped workflows and defined requirements for a system used in my own business. ChatGPT, Claude Code, and OpenAI Codex supported the build. I decided what the system needed, how to handle exceptions, and what to check and improve during use.",
-      "I want to bring this experience to a role helping customers understand their workflows, adopt AI or business systems, and improve how those systems are used.",
+      "I develop web applications and improve workflows with generative AI. My focus is making practical systems: listening to users, mapping work, deciding requirements, building, and checking behavior.",
+      "I also build websites and web applications on individual requests from peers. For a system used in my own work, I mapped workflows and defined requirements. ChatGPT, Claude Code, and OpenAI Codex supported the build. I decided what the system needed, how to handle exceptions, and what to check and improve during use.",
+      "I aim to make AI-assisted development and workflow improvement the main focus of my career. My approach draws on about seven years in elevator maintenance and appliance-repair contracting since 2023, where listening, diagnosis, verification, and clear explanations mattered every day.",
     ],
     aboutCards: [
       ["01", "Understand the field", "Listen to users and map the workflow before defining the problem."],
@@ -153,26 +153,26 @@ export const copy = {
     skillsTitle: ["From build to improvement."],
     skillsBody: ["I listen to customers, map the work, build with AI assistance, and improve the result in use."],
     skillFocus: [
-      ["Applied in my own business", "Customer interviews, workflow and requirements mapping, AI-assisted building, functional checks, human review of exceptions, and improvements based on real use."],
-      ["Web production and acquisition", "Websites, landing pages, service and pricing information, and paths to LINE and contact forms. I have also checked search data and business mentions in AI answers."],
+      ["Applied in my own work", "Customer interviews, workflow and requirements mapping, AI-assisted building, functional checks, human review of exceptions, and improvements based on real use."],
+      ["Web production and acquisition", "Websites, landing pages, service and pricing information, and paths to LINE and contact forms. Social media, SEO article writing and publishing, Google Business Profile posts, and information improvements for AI search."],
     ],
     interestsTitle: "Roles I am seeking",
     preferenceLabel: ["First preference", "Second preference", "Third preference"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "Selected work",
-    projectsBody: "A system used in my own business, followed by AI prototypes, web production, and search improvements.",
-    viewAll: "View all 10 projects",
+    projectsBody: "Practical workflows, a personal recording tool, a hotel booking demo, web production, and search improvements. Each project states its purpose and availability.",
+    viewAll: "View all 11 projects",
     viewLess: "Show featured projects",
     viewDetails: "View project details",
     featuredLabel: "Featured case study",
-    visit: "Visit live site",
+    visit: "Visit site",
     close: "Close",
     nextImage: "View another screen",
     statsEyebrow: "AT A GLANCE",
     stats: [
-      ["10", "Projects shown"],
+      ["11", "Projects shown"],
       ["2", "Languages"],
-      ["5", "Public links listed"],
+      ["6", "Project links listed"],
       ["3", "AI tools used in implementation"],
     ],
     contactEyebrow: "04 / CONTACT",
@@ -180,7 +180,7 @@ export const copy = {
     contactBody: ["My first preference is AI adoption support and workflow automation. I want to help customers map their work, build and verify practical systems, and improve them after rollout. Connect with me on Wantedly or GitHub."],
     contactPrimary: "Connect on Wantedly",
     contactSecondary: "View GitHub",
-    footer: "Ryutaro Tachibana — from field insight to better workflows.",
+    footer: "R.T. — from field insight to better workflows.",
     language: "日本語",
     motionOff: "Reduce motion",
     motionOn: "Enable motion",
@@ -222,6 +222,144 @@ export const skills = [
 ] as const;
 
 const projectEntries: Project[] = [
+{
+  "id": "hospital-inventory",
+  "number": "11",
+  "title": {
+    "ja": "病院向け在庫・発注業務の自動化",
+    "en": "Hospital Inventory and Ordering Automation"
+  },
+  "category": {
+    "ja": "業務自動化・非公開",
+    "en": "Workflow automation · confidential"
+  },
+  "summary": {
+    "ja": "在庫管理から印刷連携、仕入先への自動FAX送信、通知までをつなぐ仕組み。",
+    "en": "A workflow connecting inventory management, printing, automatic fax orders to suppliers, and notifications."
+  },
+  "detail": {
+    "ja": "病院向けの在庫管理に、印刷連携、仕入先への自動FAX送信、通知を組み合わせました。制作時間は約6時間です。守秘のため、医療機関名・利用者情報・画面・接続先は掲載していません。効果の数値や本番稼働状況はここでは示していません。",
+    "en": "Built an inventory workflow with printing integration, automatic fax sending to suppliers, and notifications. Build time was approximately six hours. Institution names, user information, screens, and connection details are withheld for confidentiality. No quantified outcomes or production-operation claims are made here."
+  },
+  "image": "",
+  "alt": {
+    "ja": "",
+    "en": ""
+  },
+  "tags": [
+    {
+      "ja": "在庫管理",
+      "en": "Inventory"
+    },
+    {
+      "ja": "印刷・FAX連携",
+      "en": "Print & fax"
+    },
+    {
+      "ja": "通知",
+      "en": "Notifications"
+    }
+  ],
+  "badge": {
+    "ja": "守秘のため画像非公開",
+    "en": "Images withheld"
+  },
+  "status": {
+    "ja": "非公開・制作約6時間",
+    "en": "Confidential · approx. 6 hours"
+  }
+},
+{
+  "id": "meeting-recorder",
+  "number": "11",
+  "title": {
+    "ja": "画面・音声録画ツール",
+    "en": "Screen and Audio Recorder"
+  },
+  "category": {
+    "ja": "個人制作・Windowsツール",
+    "en": "Personal project · Windows tool"
+  },
+  "summary": {
+    "ja": "画面、PCの再生音、自分のマイクをまとめて記録する、自分用の録画ツール。",
+    "en": "A personal desktop tool for recording the screen, system audio, and microphone together."
+  },
+  "detail": {
+    "ja": "Windows向けに制作した個人用ツールです。画面全体・ウィンドウ・範囲を選んで録画し、PC音声とマイクを別トラックで保存してMP4へまとめる構成。録画中のマーカー、一覧、切り出しにも対応しています。制作約2か月・サポート込み約3か月。顧客向けの保守契約や第三者への納品実績を示すものではありません。録画前には参加者への通知や各サービスの規約を確認します。",
+    "en": "A Windows tool built for personal use. It supports full-screen, window, and region capture, separate system-audio and microphone tracks, MP4 mixing, markers, recording lists, and trimming. Approximately two months to develop and three months including support. This personal project is not presented as a client maintenance contract or delivery. Participant notice and service terms should be checked before recording."
+  },
+  "image": "/sites/ryutaro/meeting-recorder-flow.svg",
+  "alt": {
+    "ja": "画面、PC音声、マイクからMP4を作る機能説明図。実画面ではありません。",
+    "en": "Functional diagram showing screen, system audio, and microphone combined into MP4. Not an actual screenshot."
+  },
+  "tags": [
+    {
+      "ja": "Python / Tkinter",
+      "en": "Python / Tkinter"
+    },
+    {
+      "ja": "FFmpeg",
+      "en": "FFmpeg"
+    },
+    {
+      "ja": "WASAPI",
+      "en": "WASAPI"
+    }
+  ],
+  "badge": {
+    "ja": "機能説明図",
+    "en": "Functional diagram"
+  },
+  "status": {
+    "ja": "個人用ツール・ソース非公開",
+    "en": "Personal tool · source not published"
+  }
+},
+{
+  "id": "hotel-demo",
+  "number": "12",
+  "title": {
+    "ja": "StayNote ホテル予約デモ",
+    "en": "StayNote Hotel Booking Demo"
+  },
+  "category": {
+    "ja": "予約UI・デモ制作",
+    "en": "Booking interface · demo"
+  },
+  "summary": {
+    "ja": "ホテル予約システムの提案用に制作したデモ。実案件の本番運用とは区別して紹介します。",
+    "en": "A hotel booking system demo created to present a proposal, distinct from a production client system."
+  },
+  "detail": {
+    "ja": "ホテル予約システムを想定したデモ制作です。実受注・納品・本番運用の実績としては記載していません。リンク先は現在ChatGPTへのログインを求めるため、誰でも閲覧できる公開デモではありません。掲載画像は作品の用途を伝える説明イラストであり、実画面ではありません。開発開始日や制作期間は未確定のため記載していません。",
+    "en": "A demo exploring a hotel booking system. It is not presented as a commissioned delivery or a system running in production. The linked site currently requires ChatGPT sign-in and is not anonymously accessible. The image is an explanatory illustration, not a screenshot. Development dates and duration are not stated because they have not been confirmed."
+  },
+  "image": "/sites/ryutaro/hotel-demo-illustration.svg",
+  "alt": {
+    "ja": "ホテル予約デモを表す説明イラスト。実画面ではありません。",
+    "en": "Explanatory illustration for the hotel booking demo, not an actual screenshot."
+  },
+  "tags": [
+    {
+      "ja": "予約UI",
+      "en": "Booking UI"
+    },
+    {
+      "ja": "提案用デモ",
+      "en": "Proposal demo"
+    }
+  ],
+  "badge": {
+    "ja": "説明イラスト",
+    "en": "Explanatory illustration"
+  },
+  "href": "https://staynote-hotel-demo-ryu.ryuuuta6o.chatgpt.site/",
+  "status": {
+    "ja": "デモ・閲覧にはChatGPTログインが必要",
+    "en": "Demo · ChatGPT sign-in required"
+  }
+},
   {
     id: "kyn", number: "01",
     title: { ja: "KYNエアコンサービス", en: "KYN Air Conditioning Service" },
@@ -249,31 +387,19 @@ const projectEntries: Project[] = [
     href: "https://ouchi-aircon-lp.vercel.app/",
   },
   {
-    id: "ai-lp-audit", number: "03",
-    title: { ja: "AI LP Audit", en: "AI LP Audit" },
-    category: { ja: "分析ツール・試作", en: "Analysis tool · prototype" },
-    status: { ja: "試作", en: "Prototype" },
-    summary: { ja: "ランディングページの確認項目を画面で整理するツール。", en: "A tool for reviewing landing-page factors in one interface." },
-    detail: { ja: "画面では評価項目と改善案を確認できます。現時点で確認できた挙動は、JSONデータの読み込みとルールに基づく表示です。URLからの自動クロールや生成AIによる実分析は確認できていません。", en: "The interface displays review criteria and suggestions. The verified behavior is JSON import and rule-based display. Automatic URL crawling and live generative-AI analysis have not been verified." },
-    image: "/sites/ryutaro/ai-lp-audit.webp",
-    alt: { ja: "AI LP Auditの分析ダッシュボード画面", en: "AI LP Audit dashboard screen" },
-    tags: [{ ja: "LP分析", en: "LP review" }, { ja: "データ表示", en: "Data display" }, { ja: "試作", en: "Prototype" }],
-    badge: { ja: "確認用画面", en: "Review screen" },
-  },
-  {
     id: "settlement", number: "04",
     featured: true,
     title: { ja: "案件受付・見積・協力会社への発注・精算を管理する業務システム", en: "Business System for Intake, Estimates, Partner Orders, and Settlement" },
     cardTitle: { ja: "案件受付・見積・発注・精算システム", en: "Intake, Estimate, Order & Settlement System" },
-    dialogSubtitle: { ja: "自社業務の受付から協力会社への発注・精算まで", en: "From case intake to partner orders and settlement in my own business" },
-    category: { ja: "自社業務・実運用", en: "Own business · in use" },
+    dialogSubtitle: { ja: "自分の実務の受付から協力会社への発注・精算まで", en: "From case intake to partner orders and settlement in my own work" },
+    category: { ja: "自分の実務・実運用", en: "Personal workflow · in use" },
     summary: { ja: "受付から協力会社への発注・精算までをひとつの流れで管理。2026年10月時点で実運用3か月、月平均約50件に使用しました。", en: "One workflow from intake through partner orders and settlement. As of October 2026: three months in use, averaging about 50 cases per month." },
-    detail: { ja: "住宅設備サービスの自社業務で使っている管理システムです。受付から見積、協力会社への発注、手数料・紹介料の精算までを扱います。", en: "A system used in my own residential equipment service business. It covers intake, estimates, orders to partner contractors, and settlement of service and referral fees." },
+    detail: { ja: "家電修理の実務で使っている管理システムです。受付から見積、協力会社への発注、手数料・紹介料の精算までを扱います。", en: "A system used in my own field-service workflow. It covers intake, estimates, orders to partner contractors, and settlement of service and referral fees." },
     image: "/sites/ryutaro/settlement-workflow.svg",
     alt: { ja: "案件受付、見積、協力会社への発注、精算の順につながる業務フロー図", en: "Workflow diagram: intake, estimate, partner order, and settlement" },
     tags: [{ ja: "業務設計", en: "Workflow design" }, { ja: "AI活用", en: "AI-assisted build" }, { ja: "人による確認", en: "Human review" }],
     badge: { ja: "業務フロー図", en: "Workflow diagram" },
-    status: { ja: "自社業務で実運用", en: "In use in my own business" },
+    status: { ja: "自分の実務で実運用", en: "In use in my own work" },
     caseStudy: {
       sections: [
         {
@@ -298,24 +424,11 @@ const projectEntries: Project[] = [
         },
         {
           heading: { ja: "06　確認できる運用実績", en: "06 · Recorded use" },
-          body: { ja: "2026年10月時点で自社業務に3か月間使用し、月平均約50件の案件を扱いました。", en: "As of October 2026, the system had been used in my own business for three months, averaging about 50 cases per month." },
+          body: { ja: "2026年10月時点で自分の実務に3か月間使用し、月平均約50件の案件を扱いました。", en: "As of October 2026, the system had been used in my own work for three months, averaging about 50 cases per month." },
         },
       ],
       evidence: [],
     },
-  },
-  {
-    id: "photo-estimate", number: "05",
-    title: { ja: "写真ベースのAI概算見積もり支援", en: "AI-Assisted Estimates from Photos" },
-    category: { ja: "AIアプリ・開発中", en: "AI application · in development" },
-    summary: { ja: "写真を起点に見積もりの検討を進めるアプリの試作画面。", en: "A prototype interface for starting an estimate from photos." },
-    detail: { ja: "開発中の作品です。写真と施工条件から追加確認事項や工事上のリスクを整理する流れを設計しています。AIの解釈と料金ルールを分け、判断が難しい場合は人が確認する方針です。掲載画像はデモデータを含み、機能の実装範囲と精度は未確認です。", en: "A work in progress that structures additional questions and installation risks from photos and job conditions. The design separates AI interpretation from pricing rules and sends difficult cases to a person for review. The screen includes demo data; implemented scope and accuracy remain unverified." },
-    image: "/sites/ryutaro/photo-estimate-agent-cover.webp",
-    fullImage: "/sites/ryutaro/photo-estimate-agent-full.jpg",
-    alt: { ja: "写真ベースのAI概算見積もり支援のデモ画面", en: "Demo screen for AI-assisted estimates from photos" },
-    tags: [{ ja: "試作", en: "Prototype" }, { ja: "写真", en: "Photos" }, { ja: "AI活用", en: "AI-assisted build" }],
-    badge: { ja: "デモ画面", en: "Demo screen" },
-    status: { ja: "開発中・デモ画面", en: "In development · demo screen" },
   },
   {
     id: "macro", number: "06",
@@ -329,70 +442,84 @@ const projectEntries: Project[] = [
     badge: { ja: "制作時の画面", en: "Production screen" },
     href: "https://macro-crisis-dashboard.vercel.app/",
   },
-  {
-    id: "ouchi", number: "07",
-    title: { ja: "おうちのなんでも屋｜Web制作・SEO・AI検索への取り組み", en: "Ouchi no Nandemoya | Web, SEO & AI Search" },
-    cardTitle: { ja: "おうちのなんでも屋", en: "Ouchi no Nandemoya" },
-    dialogSubtitle: { ja: "Web制作・SEO・AI検索への取り組み", en: "Web, SEO & AI Search" },
-    category: { ja: "自社サービス・運用中", en: "Own service · live" },
-    summary: { ja: "チェックリストに基づき自社サイトのSEO・AIOを改善。各28日間の保存データ比較で、検索クリック19→38、表示回数840→1,750。施策と検証結果を紹介します。", en: "Improved my own site's SEO and AI search using a checklist. Saved 28-day search data showed clicks of 19→38 and impressions of 840→1,750. Explore the work and its measured results." },
-    detail: { ja: "自社事業のWebサイトで、サービス情報を探しやすくし、問い合わせにつながる導線を整えています。チェックリストを作成し、情報整理・制作・改善から検索データの確認まで継続。2026年10月28日の運用レポートから、施策・担当範囲・検証結果を紹介します。", en: "For my own service business, I organize service information and paths to inquiry. I created a checklist and continued through content organization, production, improvements, and search-data reviews. This case study selects actions, responsibilities, and findings from the October 28, 2026 operations report." },
-    image: "/sites/ryutaro/ouchi-homepage-cover.jpg",
-    alt: { ja: "おうちのなんでも屋のホームページ画面", en: "Ouchi no Nandemoya home page screen" },
-    tags: [{ ja: "Web制作", en: "Web production" }, { ja: "SEO・AIO", en: "SEO & AI search" }, { ja: "自社事業", en: "Own business" }],
-    badge: { ja: "サイト画面", en: "Website screen" },
-    href: "https://ouchi-nandemoya.com/",
-    caseStudy: {
-      report: "ouchi-seo",
-      sections: [
-        {
-          heading: { ja: "事業・利用者の課題", en: "The problem" },
-          body: { ja: "エアコンの不調を調べる人が、症状ごとの対応内容、料金の目安、相談方法を見つけやすいサイトにすること。自社事業で受けた相談を情報設計に生かしました。", en: "People researching an air-conditioner problem need to find relevant services, indicative prices, and a clear way to ask for help. I used questions from my own service business to guide the information structure." },
-        },
-        {
-          heading: { ja: "実施したこと", en: "What I did" },
-          body: { ja: "SEO・AIOの観点を整理したチェックリストを作成し、サービス内容、症状別ページ、料金・対応地域の説明、内部リンク、メタデータ、フォーム・LINEへの導線を点検・改善しました。", en: "I created a checklist covering SEO and AI search, then checked and improved service information, symptom pages, pricing and service-area explanations, internal links, metadata, and paths to forms and LINE." },
-        },
-        {
-          heading: { ja: "本人の担当とAIの活用", en: "My role and AI assistance" },
-          body: { ja: "本人は現場で得た相談やサービス情報を整理し、掲載内容・要件・改善の優先度を判断。公開画面、相談導線、検索データを確認しています。ChatGPT・Claude Code・Codexなどを、要件整理や制作・実装・確認作業の支援に活用しています。", en: "I organize customer questions and service information, decide content, requirements, and improvement priorities, and review published screens, inquiry paths, and search data. ChatGPT, Claude Code, and Codex support requirements work, production, implementation, and checks." },
-        },
-        {
-          heading: { ja: "確認できた結果", en: "Observed results" },
-          body: { ja: "改善の取り組みを続ける中で、各28日間の比較では検索クリックが19→38、表示回数が840→1,750に増加。地域・症状別の検索順位にも改善が見られ、生成AIの回答内で事業名の掲載も確認しました。比較期間と途中経過は下のレポートにまとめています。", en: "During ongoing improvement work, comparable 28-day records showed search clicks rising from 19 to 38 and impressions from 840 to 1,750. Some local symptom-related queries improved in rank, and an AI-generated answer mentioned the business. The report below gives the periods and intermediate results." },
-        },
-        {
-          heading: { ja: "ChatGPTの回答での掲載確認", en: "Business mentions in ChatGPT answers" },
-          body: { ja: "2026年10月24日に保存した限定10回答のうち、7回答で自社名の紹介を確認しました。この記録は当時の回答の観測であり、一般的な紹介率やGoogle AI Overviewの掲載実績を示すものではありません。", en: "The business was mentioned in 7 of 10 selected ChatGPT answers saved on October 24, 2026. This is a record of those answers, not a general mention rate or a result from Google AI Overviews." },
-        },
-        {
-          heading: { ja: "今後の改善", en: "Next steps" },
-          body: { ja: "CTRと検索順位の継続確認、未確定のキーワードの検証、検索流入から相談までの計測を進めます。問い合わせ・売上の増加は、実顧客のデータを確認してから評価します。", en: "Next steps are to monitor CTR and rankings, verify queries with unresolved data, and measure the path from search visits to inquiries. Inquiry and revenue growth will be evaluated using verified real-customer data." },
-        },
-      ],
-      evidence: [
-        {
-          kind: "aio",
-          title: { ja: "AIの回答に『おうちのなんでも屋』が掲載", en: "Ouchi no Nandemoya appears in an AI-generated answer" },
-          caption: { ja: "『エアコン修理名古屋』という質問への生成AIの回答で、事業名の掲載を確認しました。", en: "The business name appeared in an AI-generated answer to a question about air-conditioner repair in Nagoya." },
-          image: "/sites/ryutaro/ouchi-ai-answer.jpg",
-          alt: { ja: "『エアコン修理名古屋』への生成AI回答。おうちのなんでも屋とサービス説明の行を赤枠で強調", en: "AI-generated answer about air-conditioner repair in Nagoya, with the Ouchi no Nandemoya row outlined in red" },
-          highlights: [{ ja: "おうちのなんでも屋 — 名古屋市を中心に修理・クリーニング・工事に対応。症状別の原因や料金を掲載。", en: "Ouchi no Nandemoya — Serves Nagoya and nearby areas with repairs, cleaning, and installation; explains causes by symptom and provides pricing information." }],
-        },
-        {
-          kind: "seo",
-          title: { ja: "地域と暖房に関する2語が10位以内に表示", en: "Two local heating queries appeared in the top ten" },
-          caption: { ja: "順位計測画面で『名古屋 エアコン 暖房が弱い』5位、『名古屋 エアコン 暖房 修理』7位を確認。画像取得時点の表示値です。", en: "The supplied ranking screen showed positions 5 and 7 for the two Nagoya heating queries at the time the image was captured." },
-          image: "/sites/ryutaro/ouchi-seo-ranking.png",
-          alt: { ja: "順位計測画面。暖房関連の2語と5位・7位の表示行を赤枠で強調", en: "Ranking screenshot with the two heating queries and positions 5 and 7 outlined in red" },
-          highlights: [
-            { ja: "名古屋 エアコン 暖房が弱い — 5位", en: "Nagoya air conditioner weak heating — position 5" },
-            { ja: "名古屋 エアコン 暖房 修理 — 7位", en: "Nagoya air conditioner heating repair — position 7" },
-          ],
-        },
-      ],
-    },
+{
+  "id": "ouchi",
+  "number": "07",
+  "title": {
+    "ja": "Web制作・集客導線の改善",
+    "en": "Web Production and Inquiry Journeys"
   },
+  "cardTitle": {
+    "ja": "Web制作・集客導線",
+    "en": "Web and Inquiry Journeys"
+  },
+  "dialogSubtitle": {
+    "ja": "SNS・SEO記事・Googleビジネスプロフィール・AIO",
+    "en": "Social Media, SEO Content, Google Business Profile & AIO"
+  },
+  "category": {
+    "ja": "Web制作・運用改善",
+    "en": "Web production & ongoing improvement"
+  },
+  "summary": {
+    "ja": "サイト制作と問い合わせ導線の整備に加え、SNS運用、SEO記事の執筆・公開、Googleマップの投稿、AI検索に向けた情報整備に取り組んでいます。",
+    "en": "Website production and inquiry journeys, alongside social media operation, SEO article writing and publishing, Google Maps posts, and information improvements for AI search."
+  },
+  "detail": {
+    "ja": "サービス内容や現場で受ける質問をもとに、Webサイトの情報とフォーム・LINEへの導線を整理。SNS運用、SEO記事の執筆・公開、Googleビジネスプロフィールでの投稿を行い、検索と相談の接点を増やしています。AIOでは、AIが読み取りやすい情報構造、構造化情報、説明するテーマの充実に取り組んでいます。成果への因果関係を断定せず、実施内容と計測結果を分けて紹介します。",
+    "en": "Organize service information and routes to forms and LINE around real field-service questions. Activities include social media operation, writing and publishing SEO articles, and Google Business Profile posts. AIO work focuses on accessible information structure, structured information, and topic coverage for AI search. Activities are distinguished from measured outcomes without claiming causation."
+  },
+  "image": "/sites/ryutaro/ouchi-homepage-cover.jpg",
+  "alt": {
+    "ja": "制作したサービスサイトの画面",
+    "en": "Service website project screen"
+  },
+  "tags": [
+    {
+      "ja": "Web・SNS",
+      "en": "Web & social"
+    },
+    {
+      "ja": "SEO記事",
+      "en": "SEO articles"
+    },
+    {
+      "ja": "Googleマップ・AIO",
+      "en": "Google Maps & AIO"
+    }
+  ],
+  "badge": {
+    "ja": "サイト画面",
+    "en": "Website screen"
+  },
+  "href": "https://ouchi-nandemoya.com/",
+"caseStudy":{
+  "sections": [
+{"heading": {"ja": "AI回答内の出典表示を確認", "en": "Observed citations in AI answers"}, "body": {"ja": "2026/11/18の試験計測で、ChatGPT回答15件のうち3件にサイトのページが出典として表示されました（OpenSEO、ブランド名を含まない質問15件）。順位や改善幅・問い合わせ数を示すものではありません。", "en": "In an OpenSEO test on November 18, 2026, pages from the site appeared as sources in 3 of 15 ChatGPT answers to unbranded queries. This does not indicate rankings, improvement over time, or inquiry volume."}},
+    {
+      "heading": {
+        "ja": "直近の検索データ（同条件・各28日間）",
+        "en": "Recent search data · equal 28-day periods"
+      },
+      "body": {
+        "ja": "2026/9/24〜10/21：クリック35、表示1,506、CTR 2.32%。2026/10/22〜11/18：クリック74、表示4,427、CTR 1.67%。クリックは約2.1倍、表示は約2.9倍ですが、CTRは低下しています。",
+        "en": "September 24–October 21, 2026: 35 clicks, 1,506 impressions, 2.32% CTR. October 22–November 18: 74 clicks, 4,427 impressions, 1.67% CTR. Clicks increased about 2.1× and impressions about 2.9×, while CTR declined."
+      }
+    },
+    {
+      "heading": {
+        "ja": "集計条件と読み取り方",
+        "en": "Scope and interpretation"
+      },
+      "body": {
+        "ja": "出典：Google Search Console（2026/11/20取得の確定データ）。Web検索、同一ドメインのプロパティ、全ての国・端末、太平洋時間の各28日間で比較。通常のWeb検索の集計であり、AI検索での掲載実績ではありません。施策単独の効果、問い合わせ数、売上の増加を証明するものではありません。",
+        "en": "Source: Google Search Console finalized data retrieved November 20, 2026. Web search, the same domain property, all countries and devices, two 28-day periods in Pacific Time. These are standard web-search metrics, not AI-search visibility results. They do not establish causation from individual changes or prove increased inquiries or revenue."
+      }
+    }
+  ],
+  "evidence": []
+}
+},
   {
     id: "electric-lp", number: "08",
     title: { ja: "法人向け電気工事LP", en: "Commercial Electrical Work LP" },
@@ -431,7 +558,7 @@ const projectEntries: Project[] = [
 ];
 
 const projectOrder = [
-  "settlement", "photo-estimate", "ai-lp-audit", "ouchi", "aircon-lp",
+  "settlement", "meeting-recorder", "hotel-demo", "hospital-inventory", "ouchi", "aircon-lp",
   "kyn", "electric-lp", "macro", "banner", "line-menu",
 ];
 

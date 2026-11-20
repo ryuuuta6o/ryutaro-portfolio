@@ -15,7 +15,6 @@ import {
   X,
 } from "lucide-react";
 import { MotionBackdrop } from "./MotionBackdrop";
-import { SeoProgressReport } from "./SeoProgressReport";
 import { useSiteMotion } from "./useSiteMotion";
 import { careerInterests, copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
 
@@ -42,7 +41,7 @@ function ProjectCard({
   return (
     <article className={`project-card reveal${project.featured ? " featured-project" : ""}`} data-motion-index={index}>
       <div className="project-media">
-        <img src={project.image} alt={project.alt[locale]} loading="lazy" />
+        {project.image ? <img src={project.image} alt={project.alt[locale]} loading="lazy" /> : <p style={{ padding: "3rem", textAlign: "center" }}>{project.badge[locale]}</p>}
         <button
           className="project-open-cover"
           type="button"
@@ -161,11 +160,11 @@ function ProjectDialog({
     }
   }, [zoomEvidence]);
   const source = alternate && project.alternateImage ? project.alternateImage : project.fullImage || project.image;
-  const projectImage = (
+  const projectImage = project.image ? (
     <div className={"dialog-image" + (project.longImage ? " long-image" : "") + (project.featured ? " workflow-illustration" : "")}>
       <img src={source} alt={alternate ? project.title[locale] + " — 2" : project.alt[locale]} />
     </div>
-  );
+  ) : null;
   return (
     <div className="dialog-backdrop" onPointerDown={(event) => {
       if (event.target === event.currentTarget) onClose();
@@ -234,7 +233,6 @@ function ProjectDialog({
                   </section>
                 ))}
               </div>
-              {project.caseStudy.report === "ouchi-seo" && <SeoProgressReport locale={locale} />}
               {project.caseStudy.evidence.length > 0 && <div className="case-study-evidence">
                 {project.caseStudy.evidence.map((evidence) => (
                   <figure className="evidence-card" key={evidence.kind}>
@@ -415,7 +413,7 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
         <nav className="nav-shell" aria-label={locale === "ja" ? "メインナビゲーション" : "Main navigation"}>
           <a className="brand" href="#top" aria-label={identity.name[locale] + " — Top"}>
             <span className="brand-mark">R<span>.</span>T</span>
-            <span className="brand-word">TACHIBANA<span className="brand-dot">.</span></span>
+            <span className="brand-word">R.T<span className="brand-dot">.</span></span>
           </a>
           <div className="desktop-links">
             {anchors.map((id, index) => (
@@ -465,7 +463,7 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
               <span className="section-kicker">{t.aboutEyebrow}</span>
               <h2>{t.aboutTitle}</h2>
               <div className="about-identity">
-                <img src={identity.portrait} alt={locale === "ja" ? "橘 龍太郎の本人写真" : "Portrait of Ryutaro Tachibana"} width={283} height={345} loading="lazy" />
+                <img src={identity.portrait} alt={locale === "ja" ? "R.T.の本人写真" : "Portrait of R.T."} width={283} height={345} loading="lazy" />
                 <div><strong>{t.aboutLead}</strong><p className="about-role"><RoleText locale={locale} /></p></div>
               </div>
               <div className="about-body">{t.aboutBody.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
