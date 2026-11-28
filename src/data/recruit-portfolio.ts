@@ -5,13 +5,13 @@ export const copy = {
   ja: {
     ...baseCopy.ja,
     nav: ["AI WORKFLOWS", "ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
-    heroLine: "現場の判断を、",
-    heroAccent: "AIで支える。",
+    heroLine: "現場の課題に、",
+    heroAccent: "AIエージェントを。",
     heroBody: [
-      ["家電修理の現場で、", "受付から精算までをひとつの仕組みに。"],
-      ["その経験をもとに、", "写真と音声を使ったAI支援を試作・検証しています。"],
+      ["写真からの見積もりと、", "会話中の回答を支援する"],
+      ["AIエージェントを設計・開発しました。"],
     ],
-    heroPrimary: "AIの活用事例を見る",
+    heroPrimary: "AIエージェントの実績を見る",
     aboutEyebrow: "02 / ABOUT",
     skillsEyebrow: "03 / APPROACH",
     projectsEyebrow: "04 / SELECTED WORK",
@@ -22,13 +22,12 @@ export const copy = {
   en: {
     ...baseCopy.en,
     nav: ["AI WORKFLOWS", "ABOUT", "SKILLS", "PROJECTS", "CONTACT"],
-    heroLine: "AI support for",
-    heroAccent: "field decisions.",
+    heroLine: "Practical tools,",
+    heroAccent: "powered by AI agents.",
     heroBody: [
-      ["I built a system that connects intake, estimates, and settlement in my appliance repair work."],
-      ["I also build and test prototypes for photo estimation and voice-based assistance."],
+      ["I design and build AI agents that help people estimate jobs from site photos and respond to questions during conversations."],
     ],
-    heroPrimary: "Explore AI workflows",
+    heroPrimary: "Explore my AI agents",
     aboutEyebrow: "02 / ABOUT",
     skillsEyebrow: "03 / APPROACH",
     projectsEyebrow: "04 / SELECTED WORK",
@@ -52,8 +51,8 @@ const estimate: Project = {
   };
 
 const recording = {
-  ja: "テスト録画で、操作バーと録画枠が保存したMP4に映らないことを確認しました。さらに、録音した会話を使うAI回答支援を試作。質問を検出し、登録資料を根拠に回答候補が表示されるところまで本人が実機で確認しました。",
-  en: "A test recording confirmed that the control bar and recording border stayed out of the saved MP4. I also prototyped AI reply assistance and verified on my device that it detected a question in recorded speech and displayed a suggested answer based on the supplied material.",
+  ja: "テスト録画で、操作バーと録画枠が保存したMP4に映らないことを確認しました。会話中の音声を文字に起こし、質問を検出して、登録資料に基づく回答候補を表示するAIアシストも試作し、実機で確認しました。返答する内容は利用者が選びます。",
+  en: "A test recording confirmed that the control bar and recording border stayed out of the saved MP4. I also prototyped and tested AI assistance that transcribes speech during a conversation, detects questions, and displays suggested replies based on reference materials. The user decides what to say.",
 };
 
 const cases = baseProjects.map(p => p.id !== "meeting-recorder" ? p : {

@@ -1,8 +1,8 @@
 import type { Locale } from "./portfolio";
 
 export const agentIntro = {
-  ja: { label: "01 / AI WORKFLOWS", title: "AIに任せる部分を、\n業務ごとに決める。", body: "見積金額を決めるときと、相手の質問に答えるとき。どちらもAIが候補を整理し、最後は担当者が判断します。", built: "制作したもの", design: "実機で確認したこと", detail: "画面と試作の詳細", evidence: "代表実績を見る" },
-  en: { label: "01 / AI WORKFLOWS", title: "Where AI helps.\nWhere people decide.", body: "An estimate and a spoken answer both need someone to stand behind them. In both prototypes, AI prepares options and a person makes the decision.", built: "What I built", design: "What I verified", detail: "Screen and prototype notes", evidence: "Read the case study" },
+  ja: { label: "01 / AI WORKFLOWS", title: "AIに任せる部分を、\n業務ごとに決める。", body: "見積金額を決めるときと、相手の質問に答えるとき。どちらもAIが候補を整理し、最後は担当者が判断します。", built: "制作したもの", design: "実機で確認したこと", detail: "画面と試作の詳細" },
+  en: { label: "01 / AI WORKFLOWS", title: "Where AI helps.\nWhere people decide.", body: "An estimate and a spoken answer both need someone to stand behind them. In both prototypes, AI prepares options and a person makes the decision.", built: "What I built", design: "What I verified", detail: "Screen and prototype notes" },
 } satisfies Record<Locale, Record<string, string>>;
 
 export const agentCases = [
@@ -13,7 +13,7 @@ export const agentCases = [
   },
   {
     id: "meeting-recorder", index: "02",
-    ja: { name: "録音した会話から回答案をつくる", label: "録音・会話支援AIエージェント", built: "Windowsで画面・PC音声・マイクを記録し、MP4に保存。録画中のマーカーを使い、必要な場面を切り出せる個人用ツールを作りました。", design: "取り込んだ会話から質問を検出し、登録資料を根拠に回答候補が表示されるところまで実機で確認しました。候補をそのまま送らず、本人が返答を選びます。", caption: "制作したWindows録画ツールの待機画面です。", status: "録画機能を実装 ／ AI回答支援は試作・本人実機確認" },
-    en: { name: "From recorded speech to a draft reply", label: "Voice Q&A agent", built: "I built a personal Windows recorder for screen, system audio, and microphone capture. It saves MP4s and supports markers and trimming.", design: "I verified on my device that the prototype detected a question in recorded speech and displayed a suggested answer based on the supplied material. The speaker chooses how to respond.", caption: "The Windows recorder I built, ready to capture.", status: "Recorder implemented / AI reply prototype verified on my device" },
+    ja: { name: "会話中に、回答候補を提示", label: "録音・会話支援AIエージェント", built: "Windowsで画面・PC音声・マイクを記録し、MP4に保存。録画中のマーカーを使い、必要な場面をあとから振り返れる録画ツールを開発しました。", design: "会話中の音声を文字に起こし、質問を検出。登録資料に基づく回答候補が表示されることを実機で確認しました。どう答えるかは利用者が決めます。", caption: "制作したWindows録画ツールの待機画面です。", status: "録画機能を実装 ／ AI回答支援は試作・本人実機確認" },
+    en: { name: "Suggested replies during a conversation", label: "Voice Q&A agent", built: "I built a Windows recorder for screen, system audio, and microphone capture. It saves MP4s and supports markers and trimming.", design: "In live testing, the prototype transcribed speech, detected a question, and displayed a suggested reply based on reference materials. The speaker decides how to respond.", caption: "The Windows recorder I built, ready to capture.", status: "Recorder implemented / AI reply prototype verified on my device" },
   },
 ];

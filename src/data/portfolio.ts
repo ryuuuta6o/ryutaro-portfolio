@@ -94,7 +94,7 @@ export const copy = {
     preferenceLabel: ["第一希望", "第二希望", "第三希望"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "制作実績",
-    projectsBody: "実務用の仕組み、個人制作ツール、ホテル予約のデモ、Web制作・集客改善を紹介します。各作品の用途と公開状態を分けて記載しています。",
+    projectsBody: "実務用の仕組み、録画・会話支援ツール、ホテル予約のデモ、Web制作・集客改善を紹介します。各作品の用途と公開状態を分けて記載しています。",
     viewAll: "すべての11作品を見る",
     viewLess: "代表作品のみ表示",
     viewDetails: "作品詳細を見る",
@@ -160,7 +160,7 @@ export const copy = {
     preferenceLabel: ["First preference", "Second preference", "Third preference"],
     projectsEyebrow: "03 / SELECTED WORK",
     projectsTitle: "Selected work",
-    projectsBody: "Practical workflows, a personal recording tool, a hotel booking demo, web production, and search improvements. Each project states its purpose and availability.",
+    projectsBody: "Practical workflows, a recording and conversation support tool, a hotel booking demo, web production, and search improvements. Each project states its purpose and availability.",
     viewAll: "View all 11 projects",
     viewLess: "Show featured projects",
     viewDetails: "View project details",
@@ -281,16 +281,16 @@ const projectEntries: Project[] = [
     "en": "Screen and Audio Recorder"
   },
   "category": {
-    "ja": "個人制作・Windowsツール",
-    "en": "Personal project · Windows tool"
+    "ja": "録画・会話支援／Windows",
+    "en": "Recording and conversation support · Windows"
   },
   "summary": {
-    "ja": "画面、PCの再生音、自分のマイクをまとめて記録する、自分用の録画ツール。",
-    "en": "A personal desktop tool for recording the screen, system audio, and microphone together."
+    "ja": "会議や作業の画面、PC音声、マイクを記録するWindowsツール。会話中の質問に対し、登録資料に基づく回答候補を表示するAI支援も試作しました。",
+    "en": "A Windows tool that records the screen, system audio, and microphone during meetings or work. It includes a prototype that suggests answers to live questions using reference materials."
   },
   "detail": {
-    "ja": "Windows向けに制作した個人用ツールです。画面全体・ウィンドウ・範囲を選んで録画し、PC音声とマイクを別トラックで保存してMP4へまとめる構成。録画中のマーカー、一覧、切り出しにも対応しています。制作約2か月・サポート込み約3か月。顧客向けの保守契約や第三者への納品実績を示すものではありません。録画前には参加者への通知や各サービスの規約を確認します。",
-    "en": "A Windows tool built for personal use. It supports full-screen, window, and region capture, separate system-audio and microphone tracks, MP4 mixing, markers, recording lists, and trimming. Approximately two months to develop and three months including support. This personal project is not presented as a client maintenance contract or delivery. Participant notice and service terms should be checked before recording."
+    "ja": "会議や作業を記録し、必要な場面を振り返るためのWindowsツールです。画面全体・ウィンドウ・範囲を選んで録画し、PC音声とマイクを別トラックで保存してMP4へまとめる構成。録画中のマーカー、一覧、切り出しにも対応しています。制作約2か月・サポート込み約3か月。録画前には参加者への通知や各サービスの規約を確認します。",
+    "en": "A Windows tool for recording and reviewing meetings or work sessions. It supports full-screen, window, and region capture, separate system-audio and microphone tracks, MP4 mixing, markers, recording lists, and trimming. Approximately two months to develop and three months including support. Participant notice and service terms should be checked before recording."
   },
   "image": "/sites/ryutaro/meeting-recorder-ui.jpg",
   "alt": {
@@ -316,8 +316,8 @@ const projectEntries: Project[] = [
     "en": "Actual recorder screen"
   },
   "status": {
-    "ja": "個人用ツール・ソース非公開",
-    "en": "Personal tool · source not published"
+    "ja": "Windowsツール・ソース非公開",
+    "en": "Windows tool · source not published"
   }
 },
 {
@@ -369,7 +369,7 @@ const projectEntries: Project[] = [
     title: { ja: "KYNエアコンサービス", en: "KYN Air Conditioning Service" },
     category: { ja: "サービスサイト", en: "Service website" },
     summary: { ja: "エアコンサービスの内容と相談導線を伝えるWebサイト。", en: "A service website communicating air-conditioning work and contact routes." },
-    detail: { ja: "サービス内容を分かりやすく並べ、問い合わせまでの導線を整理した制作実績です。公開サイトのリンクを掲載しています。成果数値や担当範囲の詳細は確認できていません。", en: "A website that presents the service and organizes a route to inquiry. A public link is available. Detailed ownership and measured outcomes have not been verified." },
+    detail: { ja: "サービス内容を分かりやすく並べ、問い合わせまでの導線を整理した制作実績です。公開サイトのリンクを掲載しています。成果数値は掲載していません。", en: "A website that presents the service and organizes a route to inquiry. A public link is available. No measured outcomes are presented." },
     image: "/sites/ryutaro/kyn-aircon-cover.jpg",
     alt: { ja: "KYNエアコンサービスのWebサイト画面", en: "KYN Air Conditioning Service website screen" },
     tags: [{ ja: "Webサイト", en: "Website" }, { ja: "導線設計", en: "User flow" }],
@@ -397,7 +397,7 @@ const projectEntries: Project[] = [
     cardTitle: { ja: "案件受付・見積・発注・精算システム", en: "Intake, Estimate, Order & Settlement System" },
     dialogSubtitle: { ja: "自分の実務の受付から協力会社への発注・精算まで", en: "From case intake to partner orders and settlement in my own work" },
     category: { ja: "自分の実務・実運用", en: "Personal workflow · in use" },
-    summary: { ja: "受付から協力会社への発注・精算までをひとつの流れで管理。2026年10月時点で実運用3か月、月平均約50件に使用しました。", en: "One workflow from intake through partner orders and settlement. As of October 2026: three months in use, averaging about 50 cases per month." },
+    summary: { ja: "受付から協力会社への発注・精算までをひとつの流れで管理。2026年10月時点で3か月間、実務で使用しました。", en: "One workflow from intake through partner orders and settlement. As of October 2026: three months in use." },
     detail: { ja: "家電修理の実務で使っている管理システムです。受付から見積、協力会社への発注、手数料・紹介料の精算までを扱います。", en: "A system used in my own field-service workflow. It covers intake, estimates, orders to partner contractors, and settlement of service and referral fees." },
     image: "/sites/ryutaro/settlement-workflow.svg",
     alt: { ja: "案件受付、見積、協力会社への発注、精算の順につながる業務フロー図", en: "Workflow diagram: intake, estimate, partner order, and settlement" },
@@ -428,7 +428,7 @@ const projectEntries: Project[] = [
         },
         {
           heading: { ja: "06　確認できる運用実績", en: "06 · Recorded use" },
-          body: { ja: "2026年10月時点で自分の実務に3か月間使用し、月平均約50件の案件を扱いました。", en: "As of October 2026, the system had been used in my own work for three months, averaging about 50 cases per month." },
+          body: { ja: "2026年10月時点で3か月間、受付から精算までの実務で使用しました。", en: "As of October 2026, I had used the system for three months to manage work from intake through settlement." },
         },
       ],
       evidence: [],

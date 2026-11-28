@@ -19,6 +19,7 @@ import { useSiteMotion } from "./useSiteMotion";
 import { careerInterests, copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/recruit-portfolio";
 
 import { agentCases, agentIntro } from "@/data/agent-workflows";
+import { workProfiles } from "@/data/work-profiles";
 
 const anchors = ["agents", "about", "skills", "projects", "contact"] as const;
 
@@ -115,6 +116,7 @@ function ProjectDialog({
   onClose: () => void;
 }) {
   const t = copy[locale];
+  const work = workProfiles[project.id];
   const closeRef = useRef<HTMLButtonElement>(null);
   const zoomBackRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -224,6 +226,20 @@ function ProjectDialog({
               )}
             </div>
           </div>
+          {work && (
+            <div className="project-work">
+              <section className="case-study-section">
+                <h3>{locale === "ja" ? "担当工程・役割" : "My role and responsibilities"}</h3>
+                <p>{work.role[locale]}</p>
+              </section>
+              <section className="case-study-section">
+                <h3>{locale === "ja" ? "使用技術・実装" : "Technology and implementation"}</h3>
+                <dl>{work.stack.map(({ tool, use }) => (
+                  <div key={tool}><dt>{tool}</dt><dd>{use[locale]}</dd></div>
+                ))}</dl>
+              </section>
+            </div>
+          )}
           {project.featured && projectImage}
           {project.caseStudy && (
             <div className="case-study">
@@ -446,7 +462,6 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
         <section className="hero" id="top">
           <MotionBackdrop stopped={!motionReady || motionOff} />
           <div className="hero-glow" aria-hidden="true" />
-          <div className="hero-spread section-inner">
           <div className="hero-content">
             <div className="hero-eyebrow">{t.eyebrow}</div>
             <h1>{t.heroLine}<br /><span>{t.heroAccent}</span></h1>
@@ -457,15 +472,6 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
               <div className="magnetic-wrap"><a className="primary-action" href="#agents">{t.heroPrimary} <ArrowUpRight size={18} /></a></div>
               <div className="magnetic-wrap"><a className="secondary-action" href="#about">{t.heroSecondary} <ArrowDown size={17} /></a></div>
             </div>
-          </div>
-          <aside className="field-note">
-            <div className="note-meta"><span>FIELD NOTE / 01</span><span>{locale === "ja" ? "実運用" : "IN USE"}</span></div>
-            <h2>{locale === "ja" ? "家電修理の受付・精算" : "Repair intake & settlement"}</h2>
-            <p className="note-number">{locale === "ja" ? <><small>月平均 約</small>50<small>件</small></> : <><small>Approx.</small>50<small>cases / month</small></>}</p>
-            <p className="note-date">{locale === "ja" ? "自分の実務で3か月間使用（2026年10月時点）" : "Used in my own work for three months as of Oct. 2026."}</p>
-            <div className="note-flow">{(locale === "ja" ? ["受付","見積","発注","精算"] : ["Intake","Quote","Order","Settle"]).map((step, i) => <span key={step}>{i > 0 && <ArrowRight size={12} aria-hidden="true" />}{step}</span>)}</div>
-            <button className="note-link" type="button" onClick={event => openProject(projects.find(p => p.id === "settlement")!, event.currentTarget)}>{agentIntro[locale].evidence}<ArrowUpRight size={16}/></button>
-          </aside>
           </div>
           <a className="scroll-cue" href="#agents"><MousePointer2 size={16} strokeWidth={1.5} /> {t.scroll} <ChevronDown size={15} /></a>
         </section>
