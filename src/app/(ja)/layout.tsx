@@ -8,7 +8,7 @@ const body = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk
 export const metadata: Metadata = {
   metadataBase: new URL("https://ryutaro-portfolio-orpin.vercel.app"),
   title: "R.T. | AI導入支援・業務自動化を志望",
-  description: "R.T.のポートフォリオ。生成AIを活用した業務改善・開発に取り組み、顧客ヒアリング、業務・要件整理、生成AIを用いた構築、検証、運用改善に取り組む。実務用の業務システム、個人制作ツール、予約デモを紹介。",
+  description: "R.T.のAI導入・業務改善ポートフォリオ。家電修理の受付・精算システムの運用実績、写真を使った見積支援と録音した音声からの回答支援の試作・実機検証を紹介します。",
   openGraph: { title: "R.T. | AI導入支援・業務自動化を志望", siteName: "R.T. Portfolio", type: "website" },
   twitter: { card: "summary", title: "R.T. | AI導入支援・業務自動化を志望" },
   alternates: { canonical: "/", languages: { ja: "/", en: "/en/", "x-default": "/" } },

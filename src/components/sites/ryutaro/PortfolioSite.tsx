@@ -16,9 +16,11 @@ import {
 } from "lucide-react";
 import { MotionBackdrop } from "./MotionBackdrop";
 import { useSiteMotion } from "./useSiteMotion";
-import { careerInterests, copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/portfolio";
+import { careerInterests, copy, identity, projects, skills, type Locale, type Project, type ProjectEvidence } from "@/data/recruit-portfolio";
 
-const anchors = ["about", "skills", "projects", "contact"] as const;
+import { agentCases, agentIntro } from "@/data/agent-workflows";
+
+const anchors = ["agents", "about", "skills", "projects", "contact"] as const;
 
 function RoleText({ locale }: { locale: Locale }) {
   if (locale === "en") return <>{identity.roles.en}</>;
@@ -444,6 +446,7 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
         <section className="hero" id="top">
           <MotionBackdrop stopped={!motionReady || motionOff} />
           <div className="hero-glow" aria-hidden="true" />
+          <div className="hero-spread section-inner">
           <div className="hero-content">
             <div className="hero-eyebrow">{t.eyebrow}</div>
             <h1>{t.heroLine}<br /><span>{t.heroAccent}</span></h1>
@@ -451,11 +454,43 @@ export function PortfolioSite({ locale }: { locale: Locale }) {
             <div className="hero-body">{t.heroBody.map((paragraph, index) => <p key={index}>{paragraph.map((phrase) => <span className={locale === "ja" ? "hero-phrase" : undefined} key={phrase}>{phrase}</span>)}</p>)}</div>
             <p className="hero-role"><RoleText locale={locale} /></p>
             <div className="hero-buttons">
-              <div className="magnetic-wrap"><a className="primary-action" href="#projects">{t.heroPrimary} <ArrowUpRight size={18} /></a></div>
+              <div className="magnetic-wrap"><a className="primary-action" href="#agents">{t.heroPrimary} <ArrowUpRight size={18} /></a></div>
               <div className="magnetic-wrap"><a className="secondary-action" href="#about">{t.heroSecondary} <ArrowDown size={17} /></a></div>
             </div>
           </div>
-          <a className="scroll-cue" href="#about"><MousePointer2 size={16} strokeWidth={1.5} /> {t.scroll} <ChevronDown size={15} /></a>
+          <aside className="field-note">
+            <div className="note-meta"><span>FIELD NOTE / 01</span><span>{locale === "ja" ? "実運用" : "IN USE"}</span></div>
+            <h2>{locale === "ja" ? "家電修理の受付・精算" : "Repair intake & settlement"}</h2>
+            <p className="note-number">{locale === "ja" ? <><small>月平均 約</small>50<small>件</small></> : <><small>Approx.</small>50<small>cases / month</small></>}</p>
+            <p className="note-date">{locale === "ja" ? "自分の実務で3か月間使用（2026年10月時点）" : "Used in my own work for three months as of Oct. 2026."}</p>
+            <div className="note-flow">{(locale === "ja" ? ["受付","見積","発注","精算"] : ["Intake","Quote","Order","Settle"]).map((step, i) => <span key={step}>{i > 0 && <ArrowRight size={12} aria-hidden="true" />}{step}</span>)}</div>
+            <button className="note-link" type="button" onClick={event => openProject(projects.find(p => p.id === "settlement")!, event.currentTarget)}>{agentIntro[locale].evidence}<ArrowUpRight size={16}/></button>
+          </aside>
+          </div>
+          <a className="scroll-cue" href="#agents"><MousePointer2 size={16} strokeWidth={1.5} /> {t.scroll} <ChevronDown size={15} /></a>
+        </section>
+        <section className="agents section" id="agents" aria-labelledby="agent-title">
+          <div className="section-inner">
+            <div className="agent-editorial section-heading">
+              <div><span className="section-kicker">{agentIntro[locale].label}</span>
+                <h2 id="agent-title">{agentIntro[locale].title}</h2></div>
+              <p>{agentIntro[locale].body}</p>
+            </div>
+            {agentCases.map(item => {
+              const notes = item[locale];
+              const project = projects.find(p => p.id === item.id)!;
+              return <article className="agent-entry" key={item.id}>
+                <div className="agent-story">
+                  <div className="agent-overline"><span>CASE / {item.index}</span><span>{notes.label}</span></div>
+                  <h3>{notes.name}</h3>
+                  <div className="agent-status">{notes.status}</div>
+                  <dl>{([[agentIntro[locale].built, notes.built],[agentIntro[locale].design, notes.design]]).map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
+                  <button className="note-link" type="button" onClick={event => openProject(project, event.currentTarget)}>{agentIntro[locale].detail}<ArrowUpRight size={16}/></button>
+                </div>
+                <figure className="agent-figure"><div><img src={project.image} alt={project.alt[locale]} loading="lazy"/></div><figcaption><span>FIG. {item.index}</span>{notes.caption}</figcaption></figure>
+              </article>;
+            })}
+          </div>
         </section>
         <section className="about section" id="about">
           <div className="section-inner about-grid">
