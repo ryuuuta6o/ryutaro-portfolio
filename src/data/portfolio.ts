@@ -234,17 +234,17 @@ const projectEntries: Project[] = [
     "en": "Workflow automation · confidential"
   },
   "summary": {
-    "ja": "在庫管理とプリンターを連携し、在庫不足や再発注のタイミングを自動で知らせる仕組み。",
-    "en": "An inventory workflow with printing integration and automatic low-stock and reorder alerts."
+    "ja": "備品の在庫が発注点に達すると担当者に通知。AIが発注メールの下書きを用意し、担当者が確認して送信できます。",
+    "en": "When a supply reaches its reorder point, staff receive an alert and an AI-drafted order email to review and send."
   },
   "detail": {
-    "ja": "病院向けに、在庫管理とプリンターの連携、在庫不足や再発注のタイミングの通知、メール・メッセージの自動送信、AI連携を組み込んだ業務システムを制作しました。制作期間は約6か月です。守秘のため、医療機関名・画像・利用者情報は掲載していません。",
-    "en": "Built a hospital inventory system with printer integration, alerts for low stock and reorder timing, automated emails and messages, and AI integration. Development took approximately six months. The institution name, images, and user information are withheld for confidentiality."
+    "ja": "病院の備品管理システムを約6か月で開発しました。在庫表とプリンターを連携し、残数が設定値まで減ると発注時期を自動で通知します。担当者は画面横のチャットで対象品目を確認し、AIが下書きした発注メールを見直してから送信できます。画像は架空の備品データを使った参考画面です。実際の院内画面や医療機関名は掲載していません。",
+    "en": "I built this hospital supplies system in about six months. It links the inventory register to a printer and notifies staff when stock reaches a preset reorder level. Staff can check the items in the chat sidebar, review the order email drafted by AI, and send it themselves. The reference screen uses fictional supply data; it does not show the actual hospital interface or identify the institution."
   },
-  "image": "",
+  "image": "/sites/ryutaro/hospital-inventory-reference.webp",
   "alt": {
-    "ja": "",
-    "en": ""
+    "ja": "参考画面：架空の備品を使った在庫一覧と、発注時期を知らせるチャット欄",
+    "en": "Reference screen: a fictional supplies register beside a chat panel with reorder reminders"
   },
   "tags": [
     {
@@ -265,8 +265,8 @@ const projectEntries: Project[] = [
     }
   ],
   "badge": {
-    "ja": "守秘のため画像非公開",
-    "en": "Images withheld"
+    "ja": "参考イメージ（架空データ）",
+    "en": "Reference screen · fictional data"
   },
   "status": {
     "ja": "非公開・制作約6か月",
